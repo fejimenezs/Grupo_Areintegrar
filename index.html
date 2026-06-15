@@ -114,24 +114,22 @@
       -webkit-backdrop-filter: blur(18px);
       box-shadow: 0 1px 0 rgba(34,211,238,0.08);
     }
-    /* Logo centrado — fondo blanco enmarcado / Centered logo — white frame */
+    /* Nombre de marca centrado / Centered brand name */
     .nav-logo-wrap {
       display: flex; align-items: center; justify-content: center;
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 4px 10px;
-      box-shadow: 0 0 0 1px rgba(34,211,238,0.15),
-                  0 2px 10px rgba(0,0,0,0.25);
-      transition: box-shadow 0.25s, transform 0.25s;
+      text-decoration: none;
     }
-    .nav-logo-wrap:hover {
-      box-shadow: 0 0 0 1.5px rgba(34,211,238,0.4),
-                  0 4px 16px rgba(0,0,0,0.3);
-      transform: translateY(-1px);
+    .nav-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem; font-weight: 900;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--bright);
+      display: flex; align-items: baseline; gap: 0.18rem;
     }
-    .nav-logo {
-      height: 42px; width: auto; object-fit: contain;
-      display: block;
+    .nav-brand-r {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 2px;
     }
     /* Grupo izquierdo y derecho / Left and right groups */
     .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -238,31 +236,44 @@
       font-style: italic;
     }
 
-    /* ── TITULAR DISPLAY — tamaño equilibrado ────────────────
-       Display headline — balanced sizing */
+    /* ── TITULAR DISPLAY — jerarquía editorial equilibrada ──
+       Display headline — editorial hierarchy, balanced size */
     .hero-display {
       position: relative; z-index: 1;
       margin-bottom: 2rem;
     }
+
+    /* Descriptor superior: GRUPO EMPRESARIAL / Company descriptor */
+    .hero-display h1 .line-label {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(13px, 2vw, 22px);
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.50);
+      margin-bottom: 0.3rem;
+    }
+
+    /* Nombre principal / Main brand name */
     .hero-display h1 {
-      font-size: clamp(52px, 10vw, 130px);
-      font-weight: 900; line-height: 0.88;
-      letter-spacing: -3px;
+      font-size: clamp(36px, 6.5vw, 82px);
+      font-weight: 900; line-height: 0.92;
+      letter-spacing: -2px;
       color: white; margin: 0;
     }
-    /* Línea blanca sólida / Solid white line */
     .hero-display h1 .line-white { color: white; display: block; }
-    /* Línea cian brillante / Bright cyan line */
     .hero-display h1 .line-cyan  { color: var(--bright); display: block; }
-    /* Línea slogan con trazo / Tagline stroke line */
+
+    /* Slogan con trazo / Stroke tagline */
     .hero-display h1 .line-stroke {
       display: block;
-      font-size: clamp(18px, 3.5vw, 44px);
-      font-style: italic;
-      -webkit-text-stroke: 1.5px rgba(255,255,255,0.16);
+      font-size: clamp(14px, 2.2vw, 28px);
+      font-style: italic; font-weight: 700;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.20);
       color: transparent;
-      letter-spacing: -0.5px;
-      margin-top: 0.5rem;
+      letter-spacing: 0px;
+      margin-top: 0.75rem;
     }
 
     /* ── FILMSTRIP: 4 fotos verticales / 4 vertical photos ── */
@@ -1107,8 +1118,8 @@
     @media (max-width: 480px) {
       /* Navbar */
       .nav { padding: 0 1rem; height: 56px; }
-      .nav-logo-wrap { padding: 3px 8px; border-radius: 8px; }
-      .nav-logo { height: 32px; }
+      .nav-brand { font-size: 0.82rem; }
+      .nav-brand-r { font-size: 0.68rem; }
 
       /* Hero compacto teléfono pequeño */
       .hero { padding: 62px 1rem 1.5rem; }
@@ -1237,9 +1248,9 @@
       <a href="#madera-plastica" class="nav-link" data-es="Madera Plástica" data-en="Plastic Wood">Madera Plástica</a>
     </div>
 
-    <!-- Col 2: logo centrado / Centered logo -->
+    <!-- Col 2: nombre marca centrado / Centered brand name -->
     <a href="#inicio" class="nav-logo-wrap">
-      <img src="logo_final.png" alt="A Reintegrar" class="nav-logo" />
+      <span class="nav-brand">A<span class="nav-brand-r">REINTEGRAR</span></span>
     </a>
 
     <!-- Col 3: enlaces derecha + acciones / Right links + actions -->
@@ -1279,9 +1290,15 @@
     <!-- Titular display / Display headline -->
     <div class="hero-display hero-anim-2">
       <h1>
-        <span class="line-white" data-es="A REINTEGRAR" data-en="A REINTEGRAR">A REINTEGRAR</span>
-        <span class="line-cyan"  data-es="S.A.S." data-en="S.A.S.">S.A.S.</span>
-        <span class="line-stroke" data-es="Del residuo al valor." data-en="From waste to value.">Del residuo al valor.</span>
+        <span class="line-label"
+              data-es="GRUPO EMPRESARIAL"
+              data-en="BUSINESS GROUP">GRUPO EMPRESARIAL</span>
+        <span class="line-white"
+              data-es="A REINTEGRAR S.A.S."
+              data-en="A REINTEGRAR S.A.S.">A REINTEGRAR S.A.S.</span>
+        <span class="line-stroke"
+              data-es="Del residuo al valor."
+              data-en="From waste to value.">Del residuo al valor.</span>
       </h1>
     </div>
 
