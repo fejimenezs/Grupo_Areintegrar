@@ -1,0 +1,18 @@
+# Archivos temporales de Office / Temp Office files
+~$*
+
+# Sistema operativo / OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Documentos de trabajo internos (no se suben al repo) / Internal working docs
+*.docx
+*.pdf
+*.pbix
+*.zip
+*.exe
+skills-lock.json
+
+# Imágenes de referencia / Reference images
+imagen de referencia para la pagian.png
