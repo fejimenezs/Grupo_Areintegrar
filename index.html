@@ -114,23 +114,24 @@
       -webkit-backdrop-filter: blur(18px);
       box-shadow: 0 1px 0 rgba(34,211,238,0.08);
     }
-    /* Logo centrado / Centered logo */
+    /* Logo centrado — fondo blanco enmarcado / Centered logo — white frame */
     .nav-logo-wrap {
       display: flex; align-items: center; justify-content: center;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 4px 10px;
+      box-shadow: 0 0 0 1px rgba(34,211,238,0.15),
+                  0 2px 10px rgba(0,0,0,0.25);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .nav-logo-wrap:hover {
+      box-shadow: 0 0 0 1.5px rgba(34,211,238,0.4),
+                  0 4px 16px rgba(0,0,0,0.3);
+      transform: translateY(-1px);
     }
     .nav-logo {
-      height: 44px; width: auto; object-fit: contain;
-      border-radius: 10px;
-      /* Mientras se recibe PNG transparente / Until transparent PNG is provided:
-         background oscuro que disimula el fondo gris del PNG */
-      background: var(--deep);
-      padding: 3px 6px;
-      box-shadow: 0 0 0 1px rgba(34,211,238,0.10);
-      filter: brightness(1.05) drop-shadow(0 2px 8px rgba(34,211,238,0.15));
-      transition: filter 0.25s;
-    }
-    .nav-logo-wrap:hover .nav-logo {
-      filter: brightness(1.1) drop-shadow(0 2px 12px rgba(34,211,238,0.3));
+      height: 42px; width: auto; object-fit: contain;
+      display: block;
     }
     /* Grupo izquierdo y derecho / Left and right groups */
     .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -1106,7 +1107,8 @@
     @media (max-width: 480px) {
       /* Navbar */
       .nav { padding: 0 1rem; height: 56px; }
-      .nav-logo { height: 36px; }
+      .nav-logo-wrap { padding: 3px 8px; border-radius: 8px; }
+      .nav-logo { height: 32px; }
 
       /* Hero compacto teléfono pequeño */
       .hero { padding: 62px 1rem 1.5rem; }
