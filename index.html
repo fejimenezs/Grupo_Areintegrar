@@ -1,86 +1,52 @@
 <!DOCTYPE html>
 <!--
   ╔══════════════════════════════════════════════════════════════════════╗
-  ║  GRUPO EMPRESARIAL A REINTEGRAR S.A.S. — Sitio Web Oficial          ║
-  ║  Official Corporate Website                                          ║
+  ║  GRUPO EMPRESARIAL A REINTEGRAR S.A.S. — Sitio Web v2.0             ║
+  ║  Official Corporate Website — Redesign                               ║
   ║                                                                      ║
-  ║  Empresa de economía circular | Circular Economy Company             ║
-  ║  Malambo, Atlántico, Colombia                                        ║
+  ║  ESTILO / STYLE:                                                     ║
+  ║  · Tipografía display editorial / Editorial display typography       ║
+  ║  · Glassmorfismo sobre fondos oscuros / Glassmorphism on dark bgs   ║
+  ║  · Filmstrip de 4 fotos reales / 4-real-photo filmstrip collage     ║
+  ║  · Pasos numerados 01-05 / Numbered steps 01-05                     ║
+  ║  · Fotografías reales en tarjetas de servicio / Real service photos  ║
   ║                                                                      ║
-  ║  Versión / Version : 1.0.0                                           ║
+  ║  REFERENCIAS VISUALES / VISUAL REFERENCES:                          ║
+  ║  · Eco Planet (editorial dark layout + numbered steps)               ║
+  ║  · Forestera (hero display type + mosaic stats)                      ║
+  ║  · African Journey (oversized text + forest photography)             ║
+  ║  · Nature Magazine (glassmorphism + blurred green bg)                ║
+  ║                                                                      ║
+  ║  Versión / Version : 2.0.0                                           ║
   ║  Fecha / Date      : Junio 2026                                      ║
   ╚══════════════════════════════════════════════════════════════════════╝
-
-  ESTRUCTURA DEL DOCUMENTO / DOCUMENT STRUCTURE:
-  ─────────────────────────────────────────────
-  1.  <head>            — Meta, fuentes, Tailwind, CSS personalizado
-  2.  #navbar           — Navegación principal fija / Fixed main navigation
-  3.  #inicio (hero)    — 3 paneles hero / 3-panel hero
-  4.  .cifras           — Contadores de impacto / Impact counters
-  5.  #economia-circular — Proceso de 5 pasos / 5-step process
-  6.  #servicios        — Grid de 6 servicios / 6-service grid
-  7.  #productos        — Catálogo de productos / Product catalog
-  8.  #madera-plastica  — Producto estrella / Star product
-  9.  #nosotros         — Misión, visión, valores / Mission, vision, values
-  10. #contacto         — Formulario + info / Form + info
-  11. <footer>          — Pie de página / Footer
-  12. <script>          — Interacciones JS / JS interactions
 -->
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO básico / Basic SEO -->
   <meta name="description"
-        content="Grupo Empresarial A Reintegrar S.A.S. — Soluciones integrales de economía circular: chatarra, residuos peligrosos, materias primas recuperadas y madera plástica. Malambo, Colombia." />
-  <meta name="keywords"
-        content="economía circular, reciclaje, chatarra, residuos peligrosos, madera plástica, polietileno, polipropileno, PET, Malambo, Colombia" />
-  <meta name="author" content="Grupo Empresarial A Reintegrar S.A.S." />
+        content="Grupo Empresarial A Reintegrar S.A.S. — Economía circular, chatarra, residuos peligrosos, materias primas y madera plástica. Malambo, Colombia." />
+  <title>A Reintegrar | Del Residuo al Valor — Malambo, Colombia</title>
 
-  <!-- Open Graph (redes sociales / social media) -->
-  <meta property="og:title"       content="A Reintegrar — Economía Circular Colombia" />
-  <meta property="og:description" content="Transformamos residuos en nuevas oportunidades. Malambo, Colombia." />
-  <meta property="og:type"        content="website" />
-  <meta property="og:image"       content="logo_final.png" />
-
-  <title>A Reintegrar | Economía Circular — Malambo, Colombia</title>
-
-  <!-- ── Fuentes / Fonts ────────────────────────────────────── -->
-  <!-- Montserrat: títulos | Inter: textos -->
+  <!-- Fuentes / Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
 
-  <!-- ── Íconos / Icons — Font Awesome 6 ───────────────────── -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous" />
 
-  <!-- ── Tailwind CSS (CDN v3) ──────────────────────────────── -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- ── Configuración Tailwind / Tailwind theme config ─────── -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          /* Paleta de marca / Brand palette */
-          colors: {
-            brand: {
-              green:        '#2E7D32',   /* Verde sostenibilidad / Sustainability green  */
-              'green-dark': '#1B5E20',   /* Verde profundo / Deep green                 */
-              'green-light':'#4CAF50',   /* Verde brillante / Bright green              */
-              blue:         '#1565C0',   /* Azul confianza / Trust blue                 */
-              'blue-dark':  '#0D2137',   /* Azul marino / Navy blue                     */
-              'blue-mid':   '#1A3A5C',   /* Azul medio / Mid blue                       */
-              gray:         '#37474F',   /* Gris grafito / Graphite gray                */
-              'gray-dark':  '#1C2526',   /* Fondo oscuro / Dark background              */
-              dark:         '#0D1B1E',   /* Negro verdoso / Near black                  */
-            }
-          },
-          /* Tipografías / Fonts */
           fontFamily: {
             heading: ['Montserrat', 'sans-serif'],
             body:    ['Inter',       'sans-serif'],
@@ -90,856 +56,1326 @@
     }
   </script>
 
-  <!-- ── CSS personalizado / Custom CSS ────────────────────── -->
   <style>
-    /* ── Variables globales / Global variables ─────────────────────── */
+    /* ════════════════════════════════════════════════════════
+       VARIABLES — Sistema de diseño / Design system tokens
+       ════════════════════════════════════════════════════════ */
     :root {
-      --green:        #4CAF50;
-      --green-mid:    #2E7D32;
-      --green-dark:   #1B5E20;
-      --blue-dark:    #0D2137;
-      --blue-mid:     #1A3A5C;
-      --dark:         #0D1B1E;
-      --gray-dark:    #1C2526;
+      /* Paleta bosque oscuro / Dark forest palette */
+      --deep:       #060e06;
+      --forest:     #0a1a0a;
+      --mid:        #142a14;
+      --green:      #1d4a1d;
+      --accent:     #4a9e3f;
+      --bright:     #72c25a;
+      --lime:       #a8d878;
+      --sage:       #e4ede0;
+      --cream:      #f5f2ea;
+      --white:      #ffffff;
+
+      /* Glassmorfismo / Glassmorphism */
+      --glass-dk:   rgba(10, 26, 10, 0.70);
+      --glass-md:   rgba(15, 40, 15, 0.55);
+      --glass-lt:   rgba(255, 255, 255, 0.06);
+      --glass-bd:   rgba(255, 255, 255, 0.12);
     }
 
-    /* Suavizado de scroll / Smooth scroll */
-    html { scroll-behavior: smooth; }
+    /* ════════════════════════════════════════════════════════
+       BASE
+       ════════════════════════════════════════════════════════ */
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', sans-serif; background: var(--forest); color: var(--white); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
 
-    /* Tipografía base / Base typography */
-    body          { font-family: 'Inter',      sans-serif; color: #1C2526; }
-    h1,h2,h3,h4,h5 { font-family: 'Montserrat', sans-serif; }
+    ::-webkit-scrollbar       { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--deep); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
-    /* Scrollbar personalizado / Custom scrollbar */
-    ::-webkit-scrollbar       { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--dark); }
-    ::-webkit-scrollbar-thumb { background: var(--green-mid); border-radius: 3px; }
+    /* Selección de texto / Text selection */
+    ::selection { background: rgba(74,158,63,0.35); color: #fff; }
 
-    /* ── NAVBAR ────────────────────────────────────────────────────── */
-    .navbar {
-      background: rgba(13, 27, 30, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: background 0.3s, box-shadow 0.3s;
+    /* ════════════════════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════════════════════ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+      background: rgba(6, 14, 6, 0.0);
+      backdrop-filter: blur(0px);
+      transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
     }
-    .navbar.scrolled {
-      background: rgba(13, 27, 30, 1);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    .nav.solid {
+      background: rgba(6, 14, 6, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
     }
-
-    /* Enlace de navegación con subrayado animado */
-    /* Navigation link with animated underline   */
+    .nav-logo { height: 40px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; gap: 2rem; }
     .nav-link {
-      position: relative;
-      color: rgba(255,255,255,0.75);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.70);
       transition: color 0.25s;
+      text-decoration: none;
     }
-    .nav-link::after {
+    .nav-link:hover { color: var(--bright); }
+    .nav-cta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      background: var(--accent);
+      color: white; text-decoration: none;
+      padding: 0.55rem 1.4rem; border-radius: 50px;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .nav-cta:hover { background: var(--bright); transform: translateY(-1px); }
+
+    /* Mobile hamburger / Hamburguesa móvil */
+    .nav-burger { display: none; background: none; border: none; cursor: pointer; color: white; font-size: 1.3rem; }
+    .mobile-nav {
+      position: fixed; inset: 0; z-index: 99;
+      background: rgba(6,14,6,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 2rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s;
+    }
+    .mobile-nav.open { opacity: 1; pointer-events: all; }
+    .mobile-nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem; font-weight: 800;
+      color: rgba(255,255,255,0.8); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-nav a:hover { color: var(--bright); }
+    .mobile-close {
+      position: absolute; top: 1.5rem; right: 2rem;
+      background: none; border: none; color: white;
+      font-size: 1.5rem; cursor: pointer;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       HERO — Editorial Eco Planet style
+       ════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(170deg, var(--deep) 0%, #0b1e0b 45%, var(--forest) 100%);
+      padding: 68px 2.5rem 3rem;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+    }
+
+    /* Textura sutil de fondo / Subtle background texture */
+    .hero::before {
       content: '';
-      position: absolute;
-      bottom: -3px; left: 0;
-      width: 0; height: 2px;
-      background: var(--green);
-      transition: width 0.3s ease;
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(74,158,63,0.08) 0%, transparent 70%),
+        radial-gradient(circle at 15% 30%, rgba(74,158,63,0.04) 0%, transparent 40%);
+      pointer-events: none;
     }
-    .nav-link:hover          { color: #fff; }
-    .nav-link:hover::after   { width: 100%; }
 
-    /* Menú móvil con animación / Animated mobile menu */
-    #mobile-menu {
-      max-height: 0;
+    /* Texto superior del hero / Hero top text */
+    .hero-top {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      padding-top: 2.5rem; margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .hero-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; color: rgba(255,255,255,0.35);
+      font-style: italic; max-width: 220px; text-align: right;
+    }
+
+    /* Titular display gigante / Giant display headline */
+    .hero-display {
+      position: relative; z-index: 1;
+      margin-bottom: 2rem;
+    }
+    .hero-display h1 {
+      font-size: clamp(56px, 11vw, 128px);
+      font-weight: 900; line-height: 0.88;
+      letter-spacing: -3px;
+      color: white; margin: 0;
+    }
+    .hero-display h1 .line-accent {
+      /* Texto con trazo / Stroke text effect */
+      -webkit-text-stroke: 2px rgba(255,255,255,0.25);
+      color: transparent;
+    }
+    .hero-display h1 .line-green {
+      color: var(--bright);
+    }
+
+    /* ── FILMSTRIP: 4 fotos verticales / 4 vertical photos ── */
+    .filmstrip {
+      display: grid;
+      grid-template-columns: 0.85fr 1.35fr 1.35fr 1fr;
+      gap: 10px;
+      height: clamp(220px, 38vh, 420px);
+      margin: 0 0 2.5rem;
+      position: relative; z-index: 1;
+    }
+    .strip {
+      border-radius: 14px;
       overflow: hidden;
-      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
-    }
-    #mobile-menu.open { max-height: 420px; }
-
-    /* ── HERO — Sección principal / Main hero section ──────────────── */
-    .hero { background: var(--dark); min-height: 100vh; display: flex; flex-direction: column; }
-
-    /* Paneles del hero — expanden al hacer hover */
-    /* Hero panels — expand on hover                */
-    .hero-panel {
       position: relative;
-      overflow: hidden;
-      flex: 1;
-      transition: flex 0.45s cubic-bezier(0.4,0,0.2,1);
-      min-height: 360px;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
     }
-    @media (min-width: 1024px) {
-      .hero-panel:hover { flex: 1.25; }
+    .strip:hover { transform: scale(1.025); z-index: 2; }
+    .strip img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      display: block;
     }
-
-    /* Fondos de los paneles con gradientes / Panel gradient backgrounds */
-    .hero-p1 {
-      background:
-        linear-gradient(180deg, rgba(10,40,13,0.9) 0%, rgba(27,94,32,0.78) 100%),
-        repeating-linear-gradient(45deg, rgba(76,175,80,0.04) 0, rgba(76,175,80,0.04) 1px, transparent 1px, transparent 10px);
-    }
-    .hero-p2 {
-      background:
-        linear-gradient(180deg, rgba(8,22,40,0.93) 0%, rgba(21,58,92,0.82) 100%),
-        repeating-linear-gradient(-45deg, rgba(21,101,192,0.05) 0, rgba(21,101,192,0.05) 1px, transparent 1px, transparent 10px);
-    }
-    .hero-p3 {
-      background:
-        linear-gradient(180deg, rgba(10,32,20,0.9) 0%, rgba(27,80,45,0.82) 100%);
+    .strip:hover img { transform: scale(1.06); }
+    /* Velo oscuro inferior en cada foto / Dark bottom veil on each photo */
+    .strip::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(6,14,6,0.6) 0%, transparent 100%);
+      pointer-events: none;
     }
 
-    /* Separadores entre paneles / Panel dividers */
-    .hero-p2 { border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
-    @media (min-width: 1024px) {
-      .hero-p2 { border-top: none; border-bottom: none; border-left: 1px solid rgba(255,255,255,0.08); border-right: 1px solid rgba(255,255,255,0.08); }
+    /* ── EDITORIAL BOTTOM: 2 tarjetas de vidrio / 2 glass cards ── */
+    .hero-editorial {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr 1fr;
+      gap: 1rem;
+      position: relative; z-index: 1;
+      align-items: start;
+    }
+    .editorial-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .editorial-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      color: var(--bright); letter-spacing: 1px;
+      margin-bottom: 0.5rem; display: block;
+    }
+    .editorial-card p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; line-height: 1.65;
+      color: rgba(255,255,255,0.60);
+    }
+    /* Centro del editorial: scroll indicator / Center: scroll indicator */
+    .hero-scroll {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end; gap: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.35));
+      animation: lineGrow 1.8s ease-in-out infinite;
+    }
+    @keyframes lineGrow {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+    }
+    .scroll-text {
+      font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.3); writing-mode: horizontal-tb;
     }
 
-    /* ── BOTONES / BUTTONS ─────────────────────────────────────────── */
-    /* Botón primario verde / Primary green button */
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
-      color: #fff;
-      padding: 0.75rem 1.75rem;
-      border-radius: 50px;
-      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.875rem;
-      letter-spacing: 0.4px;
-      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
-      text-decoration: none; border: none; cursor: pointer;
+    /* ════════════════════════════════════════════════════════
+       PROCESO — Layout editorial con foto / Editorial with photo
+       ════════════════════════════════════════════════════════ */
+    .proceso {
+      background: var(--deep);
+      padding: 6rem 2.5rem;
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(76,175,80,0.45);
-      background: linear-gradient(135deg, #66BB6A 0%, #388E3C 100%);
+    .proceso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      max-width: 1280px; margin: 0 auto;
+      align-items: center;
     }
 
-    /* Botón contorno blanco / White outline button */
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: transparent;
-      border: 2px solid rgba(255,255,255,0.55);
-      color: #fff;
-      padding: 0.7rem 1.5rem;
-      border-radius: 50px;
-      font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem;
-      transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.25s;
-      text-decoration: none; cursor: pointer;
+    /* Foto izquierda con overlay de texto / Left photo with text overlay */
+    .proceso-photo {
+      position: relative; border-radius: 20px; overflow: hidden;
+      aspect-ratio: 3/4;
     }
-    .btn-outline:hover {
-      background: #fff; color: var(--dark); border-color: #fff;
-      transform: translateY(-2px);
+    .proceso-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .proceso-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(6,14,6,0.92) 0%, rgba(6,14,6,0.4) 50%, transparent 100%);
+    }
+    .proceso-photo-text {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem;
+    }
+    .proceso-photo-big {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 52px); font-weight: 900;
+      line-height: 0.92; color: white; margin: 0;
+    }
+    .proceso-photo-big span { color: var(--bright); }
+
+    /* Pasos numerados / Numbered steps */
+    .proceso-steps { padding: 1rem 0; }
+    .proceso-header { margin-bottom: 3rem; }
+    .proceso-header h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800; color: white; margin-bottom: 0.75rem;
+    }
+    .proceso-header p {
+      font-size: 0.9rem; line-height: 1.7;
+      color: rgba(255,255,255,0.45);
     }
 
-    /* Botón WhatsApp / WhatsApp button */
-    .btn-wa {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
-      background: #25D366; color: #fff;
-      padding: 0.9rem 1.8rem; border-radius: 50px;
-      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95rem;
-      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-      text-decoration: none; width: 100%;
+    .step {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 1.2rem 1.5rem; align-items: start;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: border-color 0.3s;
     }
-    .btn-wa:hover {
-      background: #1ebe5a;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(37,211,102,0.4);
+    .step:last-child { border-bottom: none; }
+    .step:hover { border-color: rgba(74,158,63,0.3); }
+
+    .step-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 800;
+      color: var(--accent); letter-spacing: 1px;
+      padding-top: 3px;
+      grid-row: span 2;
+    }
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      color: white; display: flex; align-items: center; gap: 0.7rem;
+    }
+    .step-title::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, rgba(74,158,63,0.5), transparent);
+    }
+    .step-desc {
+      font-size: 0.8rem; line-height: 1.65;
+      color: rgba(255,255,255,0.45); margin-top: 0.2rem;
     }
 
-    /* ── PROCESO / PROCESS ─────────────────────────────────────────── */
-    .process-icon {
-      width: 76px; height: 76px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.7rem; margin: 0 auto 1rem;
-      transition: transform 0.3s, box-shadow 0.3s;
+    /* ════════════════════════════════════════════════════════
+       SERVICIOS — Fotos reales con overlay / Real photos + overlay
+       ════════════════════════════════════════════════════════ */
+    .servicios {
+      background: var(--forest);
+      padding: 6rem 2.5rem;
     }
-    .process-step:hover .process-icon {
-      transform: scale(1.12);
-      box-shadow: 0 10px 28px rgba(46,125,50,0.3);
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 800;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 28px; height: 2px; background: var(--accent);
+    }
+    .section-h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900; line-height: 1;
+      color: white; margin-bottom: 0.5rem;
+    }
+    .section-h2 .ghost {
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.2);
+      color: transparent;
+    }
+    .section-sub {
+      font-size: 0.875rem; line-height: 1.7;
+      color: rgba(255,255,255,0.45); max-width: 480px;
     }
 
-    /* ── TARJETAS DE SERVICIOS / SERVICE CARDS ─────────────────────── */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 340px 280px;
+      gap: 10px;
+      max-width: 1280px; margin: 3rem auto 0;
+    }
+    /* Card especial grande / Large feature card */
+    .svc-card-featured { grid-column: span 2; }
+
     .svc-card {
       position: relative; overflow: hidden;
-      border-radius: 14px; min-height: 280px;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      cursor: default; transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 16px; cursor: default;
     }
-    .svc-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 22px 44px rgba(0,0,0,0.45);
-    }
-    /* Fondo de cada tarjeta / Card background */
-    .svc-bg {
+    .svc-photo {
       position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      transition: transform 0.5s ease;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
     }
-    .svc-card:hover .svc-bg { transform: scale(1.06); }
-
-    /* Overlay oscuro / Dark overlay */
+    .svc-card:hover .svc-photo { transform: scale(1.08); }
     .svc-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(175deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.78) 100%);
-      transition: background 0.3s;
+      background: linear-gradient(
+        to top,
+        rgba(6,14,6,0.97) 0%,
+        rgba(6,14,6,0.65) 40%,
+        rgba(6,14,6,0.15) 75%,
+        transparent 100%
+      );
+      transition: background 0.4s;
     }
     .svc-card:hover .svc-overlay {
-      background: linear-gradient(175deg, rgba(27,94,32,0.25) 0%, rgba(13,33,14,0.88) 100%);
+      background: linear-gradient(
+        to top,
+        rgba(13,40,10,0.97) 0%,
+        rgba(13,40,10,0.72) 45%,
+        rgba(13,40,10,0.25) 75%,
+        transparent 100%
+      );
     }
-
-    /* Fondos de gradiente por servicio / Per-service gradient backgrounds */
-    .sb-1 { background: linear-gradient(135deg, #455A64 0%, #263238 60%, #1C2526 100%); }
-    .sb-2 { background: linear-gradient(135deg, #1a2340 0%, #0d1a36 60%, #070f20 100%); }
-    .sb-3 { background: linear-gradient(135deg, #2d4a27 0%, #1b3d18 60%, #0e280b 100%); }
-    .sb-4 { background: linear-gradient(135deg, #3d2a1e 0%, #2a1a10 60%, #180e07 100%); }
-    .sb-5 { background: linear-gradient(135deg, #1e3a2a 0%, #132b1e 60%, #091f12 100%); }
-    .sb-6 { background: linear-gradient(135deg, #1a3340 0%, #0d2230 60%, #091520 100%); }
-
-    /* ── TARJETAS DE PRODUCTOS / PRODUCT CARDS ─────────────────────── */
-    .prod-card {
-      background: #fff;
-      border: 1px solid #e4ede4;
-      border-radius: 14px; padding: 1.75rem;
-      position: relative; overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    .svc-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 1.75rem; z-index: 1;
     }
-    /* Barra lateral verde / Green sidebar accent */
-    .prod-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: linear-gradient(180deg, var(--green) 0%, var(--green-dark) 100%);
-    }
-    .prod-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 14px 32px rgba(46,125,50,0.16);
-      border-color: #a5d6a7;
-    }
-    .prod-icon {
-      width: 52px; height: 52px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(76,175,80,0.14) 0%, rgba(46,125,50,0.22) 100%);
+    .svc-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(74,158,63,0.25);
+      border: 1px solid rgba(74,158,63,0.35);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; color: var(--green-mid); margin-bottom: 1rem;
+      font-size: 1.05rem; color: var(--bright);
+      margin-bottom: 0.85rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .svc-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: white; margin-bottom: 0.4rem;
+    }
+    .svc-desc {
+      font-size: 0.75rem; line-height: 1.6;
+      color: rgba(255,255,255,0.55); max-width: 340px;
+    }
+    /* Tag en esquina superior / Top corner tag */
+    .svc-tag {
+      position: absolute; top: 1rem; left: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--bright);
+      background: rgba(6,14,6,0.5);
+      border: 1px solid rgba(114,194,90,0.25);
+      padding: 0.25rem 0.65rem; border-radius: 50px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
-    /* ── MADERA PLÁSTICA / PLASTIC WOOD section ─────────────────────── */
-    .pw-bg {
-      background: linear-gradient(135deg, #1B5E20 0%, #0d2710 100%);
+    /* ════════════════════════════════════════════════════════
+       IMPACTO — Mosaico de estadísticas / Stats mosaic
+       ════════════════════════════════════════════════════════ */
+    .impacto {
+      background: var(--sage);
+      padding: 6rem 2.5rem;
     }
+    .impacto-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 4rem;
+      max-width: 1280px; margin: 0 auto;
+      align-items: center;
+    }
+    .impacto-text h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+      color: #0a1a0a; line-height: 1.1; margin-bottom: 1rem;
+    }
+    .impacto-text p {
+      font-size: 0.875rem; line-height: 1.75;
+      color: rgba(10,26,10,0.55); max-width: 380px;
+      margin-bottom: 2rem;
+    }
+
+    /* Mosaico Forestera-style / Forestera-style mosaic */
+    .stats-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 8px;
+    }
+    .stat-block {
+      background: white; border-radius: 12px;
+      padding: 1.4rem 1.2rem;
+      display: flex; flex-direction: column; gap: 0.25rem;
+    }
+    .stat-block.dark { background: var(--green); }
+    .stat-block.accent-bg { background: var(--accent); }
+
+    .stat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: rgba(10,26,10,0.45);
+    }
+    .stat-block.dark .stat-label,
+    .stat-block.accent-bg .stat-label { color: rgba(255,255,255,0.55); }
+
+    .stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900;
+      color: var(--green); line-height: 1;
+    }
+    .stat-block.dark .stat-num,
+    .stat-block.accent-bg .stat-num { color: white; }
+
+    .stat-unit {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; color: rgba(10,26,10,0.45);
+    }
+    .stat-block.dark .stat-unit,
+    .stat-block.accent-bg .stat-unit { color: rgba(255,255,255,0.55); }
+
+    /* Imagen en el mosaico / Image in mosaic */
+    .stat-img {
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: auto;
+    }
+    .stat-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       MADERA PLÁSTICA — Sección foto full / Full photo section
+       ════════════════════════════════════════════════════════ */
+    .madera {
+      position: relative; overflow: hidden;
+      min-height: 90vh;
+      display: flex; align-items: center;
+    }
+    .madera-photo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+    }
+    .madera-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        100deg,
+        rgba(6,14,6,0.97) 0%,
+        rgba(6,14,6,0.88) 45%,
+        rgba(6,14,6,0.50) 75%,
+        rgba(6,14,6,0.20) 100%
+      );
+    }
+    .madera-content {
+      position: relative; z-index: 1;
+      padding: 5rem 2.5rem;
+      max-width: 1280px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: center;
+    }
+
+    /* Texto display en la sección madera / Display text in plastic wood */
+    .madera-big {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(52px, 9vw, 110px); font-weight: 900;
+      line-height: 0.85; letter-spacing: -3px;
+      color: white;
+    }
+    .madera-big .outline {
+      -webkit-text-stroke: 2px rgba(255,255,255,0.22);
+      color: transparent;
+    }
+    .madera-big .green { color: var(--bright); }
+
+    /* Tarjeta de vidrio con ventajas / Glass card with advantages */
+    .madera-glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px; padding: 2.5rem;
+    }
+    .madera-glass h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--bright); margin-bottom: 1.25rem;
+    }
+    .check-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+    .check-list li {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.83rem; color: rgba(255,255,255,0.75);
+      font-family: 'Inter', sans-serif;
+    }
+    .check-list li i { color: var(--bright); font-size: 0.9rem; flex-shrink: 0; }
 
     /* Chips de aplicaciones / Application chips */
-    .app-chip {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: rgba(255,255,255,0.88);
-      padding: 0.38rem 0.9rem; border-radius: 50px;
-      font-family: 'Inter', sans-serif; font-size: 0.82rem;
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .chip {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 0.3rem 0.75rem; border-radius: 50px;
       transition: background 0.2s, border-color 0.2s;
     }
-    .app-chip:hover {
-      background: rgba(76,175,80,0.28);
-      border-color: rgba(76,175,80,0.5);
+    .chip:hover { background: rgba(74,158,63,0.22); border-color: rgba(74,158,63,0.35); }
+
+    /* Stat destacada / Feature stat */
+    .madera-stat {
+      display: flex; align-items: center; gap: 1rem;
+      background: rgba(74,158,63,0.18);
+      border: 1px solid rgba(74,158,63,0.3);
+      border-radius: 14px; padding: 1.25rem 1.5rem;
+      margin-top: 1.75rem;
+    }
+    .madera-stat-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(74,158,63,0.25); border: 1px solid rgba(74,158,63,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--bright); flex-shrink: 0;
+    }
+    .madera-stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem; font-weight: 900; color: var(--bright); line-height: 1;
+    }
+    .madera-stat-text {
+      font-size: 0.75rem; color: rgba(255,255,255,0.5);
+      font-family: 'Inter', sans-serif;
     }
 
-    /* ── VALORES / VALUES cards ─────────────────────────────────────── */
-    .val-card {
-      background: rgba(255,255,255,0.03);
+    /* ════════════════════════════════════════════════════════
+       NOSOTROS — Dark editorial / Dark editorial layout
+       ════════════════════════════════════════════════════════ */
+    .nosotros {
+      background: var(--deep);
+      padding: 7rem 2.5rem;
+    }
+    .nosotros-grid {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem;
+      align-items: start;
+    }
+
+    /* Cita grande / Large quote */
+    .nosotros-quote {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 900;
+      line-height: 1.05; color: white;
+    }
+    .nosotros-quote span { color: var(--bright); }
+    .quote-mark {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8rem; font-weight: 900;
+      color: rgba(74,158,63,0.15); line-height: 0.6;
+      margin-bottom: -1rem; display: block;
+    }
+    .nosotros-sub {
+      font-size: 0.87rem; line-height: 1.75;
+      color: rgba(255,255,255,0.42); margin-top: 1.5rem;
+      max-width: 420px;
+    }
+
+    /* Misión + Visión cards / Mission + Vision cards */
+    .mv-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .mv-card {
+      border-radius: 16px; padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .mv-card:hover {
+      border-color: rgba(74,158,63,0.3);
+      background: rgba(74,158,63,0.05);
+    }
+    .mv-icon {
+      width: 38px; height: 38px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; margin-bottom: 0.85rem;
+    }
+    .mv-h { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 800; color: white; margin-bottom: 0.4rem; }
+    .mv-p { font-size: 0.8rem; line-height: 1.7; color: rgba(255,255,255,0.45); }
+
+    /* Valores en fila / Inline values */
+    .valores {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .valores h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.75rem;
+    }
+    .val-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .val-pill {
+      display: flex; align-items: center; gap: 0.6rem;
+      background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px; padding: 1.75rem 1.25rem;
-      text-align: center;
-      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+      border-radius: 50px; padding: 0.5rem 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.65);
+      transition: all 0.25s;
     }
-    .val-card:hover {
-      background: rgba(76,175,80,0.09);
-      border-color: rgba(76,175,80,0.28);
-      transform: translateY(-5px);
+    .val-pill:hover {
+      background: rgba(74,158,63,0.12);
+      border-color: rgba(74,158,63,0.28);
+      color: var(--bright);
+    }
+    .val-pill i { color: var(--accent); font-size: 0.7rem; }
+
+    /* ════════════════════════════════════════════════════════
+       CONTACTO — Glassmorphism / Contact with glassmorphism
+       ════════════════════════════════════════════════════════ */
+    .contacto {
+      background: var(--forest);
+      padding: 7rem 2.5rem;
+      position: relative; overflow: hidden;
+    }
+    .contacto::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,158,63,0.08) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    /* ── FORMULARIO DE CONTACTO / CONTACT FORM ─────────────────────── */
+    .contacto-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: start; position: relative; z-index: 1;
+    }
+
+    /* Formulario de vidrio / Glass form */
+    .contact-form-wrap {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px; padding: 2.5rem;
+    }
+    .contact-form-wrap h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem; font-weight: 800; color: white;
+      margin-bottom: 1.75rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: rgba(255,255,255,0.35);
+      font-family: 'Montserrat', sans-serif;
+    }
     .c-input {
-      width: 100%;
       background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.14);
-      color: #fff; border-radius: 9px;
-      padding: 0.8rem 1.1rem;
-      font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white; border-radius: 10px;
+      padding: 0.75rem 1rem;
+      font-family: 'Inter', sans-serif; font-size: 0.875rem;
       transition: border-color 0.25s, background 0.25s;
-      outline: none;
+      outline: none; width: 100%;
     }
-    .c-input::placeholder { color: rgba(255,255,255,0.35); }
-    .c-input:focus {
-      border-color: var(--green);
-      background: rgba(255,255,255,0.085);
-    }
-    /* Opciones del select / Select options */
-    .c-input option { background: #1C2526; }
+    .c-input::placeholder { color: rgba(255,255,255,0.28); }
+    .c-input:focus { border-color: var(--accent); background: rgba(255,255,255,0.08); }
+    .c-input option { background: #142a14; }
 
-    /* ── UTILITARIOS / UTILITIES ────────────────────────────────────── */
-    /* Etiqueta de sección / Section label pill */
-    .sec-label {
-      display: inline-block;
-      background: rgba(76,175,80,0.12);
-      color: #388E3C;
-      border: 1px solid rgba(76,175,80,0.28);
-      padding: 0.28rem 1rem; border-radius: 50px;
+    /* Información de contacto / Contact info */
+    .contact-info h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+      color: white; line-height: 1; margin-bottom: 1rem;
+    }
+    .contact-info h2 span { color: var(--bright); }
+    .contact-info > p {
+      font-size: 0.875rem; line-height: 1.7;
+      color: rgba(255,255,255,0.45); margin-bottom: 2.5rem;
+    }
+    .info-items { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+    .info-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .info-icon {
+      width: 42px; height: 42px; border-radius: 11px;
+      background: rgba(74,158,63,0.14); border: 1px solid rgba(74,158,63,0.22);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: var(--bright); flex-shrink: 0;
+    }
+    .info-label { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.8px; }
+    .info-val { font-size: 0.875rem; color: rgba(255,255,255,0.82); margin-top: 0.15rem; }
+    .info-val a { color: var(--bright); text-decoration: none; transition: color 0.2s; }
+    .info-val a:hover { color: var(--lime); }
+
+    /* ════════════════════════════════════════════════════════
+       BOTONES / BUTTONS
+       ════════════════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.55rem;
       font-family: 'Montserrat', sans-serif; font-weight: 700;
-      font-size: 0.72rem; letter-spacing: 1.6px; text-transform: uppercase;
-      margin-bottom: 0.85rem;
+      font-size: 0.78rem; letter-spacing: 0.8px;
+      border-radius: 50px; cursor: pointer; text-decoration: none;
+      transition: all 0.3s ease; border: none;
     }
-    .sec-label-inv {
-      background: rgba(76,175,80,0.15);
-      color: #81C784;
-      border-color: rgba(102,187,106,0.3);
+    .btn-green {
+      background: linear-gradient(135deg, var(--bright) 0%, var(--accent) 100%);
+      color: white; padding: 0.85rem 1.8rem;
     }
+    .btn-green:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(74,158,63,0.4);
+      background: linear-gradient(135deg, #8fd46e 0%, #5bb84d 100%);
+    }
+    .btn-outline-w {
+      background: transparent; color: white;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      padding: 0.8rem 1.6rem;
+    }
+    .btn-outline-w:hover { background: white; color: var(--deep); border-color: white; }
+    .btn-wa {
+      background: #25D366; color: white;
+      padding: 0.9rem 1.8rem; width: 100%; justify-content: center;
+    }
+    .btn-wa:hover { background: #1ebe5a; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(37,211,102,0.35); }
 
-    /* Divisor decorativo / Decorative divider */
-    .green-line {
-      width: 56px; height: 4px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--green) 0%, var(--green-dark) 100%);
-      margin: 1rem auto 0;
+    /* ════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════ */
+    .footer {
+      background: var(--deep);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 3.5rem 2.5rem 2rem;
     }
+    .footer-grid {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-logo { height: 36px; object-fit: contain; margin-bottom: 1rem; }
+    .footer-about {
+      font-size: 0.78rem; line-height: 1.75;
+      color: rgba(255,255,255,0.35); max-width: 280px; margin-bottom: 1.25rem;
+    }
+    .social-row { display: flex; gap: 0.6rem; }
+    .social-btn {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.38); font-size: 0.82rem;
+      transition: all 0.25s; text-decoration: none;
+    }
+    .social-btn:hover { background: rgba(74,158,63,0.18); border-color: rgba(74,158,63,0.3); color: var(--bright); }
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-col ul li a {
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--bright); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1.5rem; max-width: 1280px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+    .footer-slogan { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-style: italic; color: rgba(255,255,255,0.18); }
 
-    /* Animación de revelado al hacer scroll / Scroll reveal animation */
+    /* ════════════════════════════════════════════════════════
+       ANIMACIONES / ANIMATIONS
+       ════════════════════════════════════════════════════════ */
     .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .reveal.vis { opacity: 1; transform: translateY(0); }
 
-    /* Rebote del indicador de scroll / Scroll indicator bounce */
-    @keyframes bounce-y {
-      0%,100% { transform: translateY(0);   }
-      50%      { transform: translateY(8px); }
+    /* Hero animations */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .bounce { animation: bounce-y 1.5s ease-in-out infinite; }
+    .hero-anim-1 { animation: heroFadeUp 0.9s ease 0.2s both; }
+    .hero-anim-2 { animation: heroFadeUp 0.9s ease 0.45s both; }
+    .hero-anim-3 { animation: heroFadeUp 0.9s ease 0.7s both; }
+    .hero-anim-4 { animation: heroFadeUp 0.9s ease 0.95s both; }
 
-    /* Brillo pulsante en cifras / Pulsing glow on numbers */
-    @keyframes glow {
-      0%,100% { text-shadow: 0 0  8px rgba(76,175,80,0); }
-      50%      { text-shadow: 0 0 20px rgba(76,175,80,0.5); }
+    /* Contar animado / Animated counter */
+    .counter { font-variant-numeric: tabular-nums; }
+
+    /* ════════════════════════════════════════════════════════
+       RESPONSIVE — Mobile adjustments
+       ════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .filmstrip { grid-template-columns: repeat(2, 1fr); height: 280px; }
+      .filmstrip .strip:nth-child(3),
+      .filmstrip .strip:nth-child(4) { display: none; }
+      .proceso-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .proceso-photo { aspect-ratio: 16/9; }
+      .svc-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 280px 280px; }
+      .svc-card-featured { grid-column: span 1; }
+      .impacto-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .madera-content { grid-template-columns: 1fr; gap: 3rem; }
+      .nosotros-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-editorial { grid-template-columns: 1fr 1fr; }
+      .hero-scroll { display: none; }
     }
-    .num-glow { animation: glow 3s ease-in-out infinite; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-burger { display: block; }
+      .hero { padding: 68px 1.25rem 2.5rem; }
+      .filmstrip { grid-template-columns: 1fr 1fr; height: 220px; }
+      .hero-editorial { grid-template-columns: 1fr; gap: 0.75rem; }
+      .editorial-card:last-child { display: none; }
+      .svc-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+      .svc-grid .svc-card { height: 260px; }
+      .stats-mosaic { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
   </style>
 </head>
 
-<body class="bg-white antialiased">
+<body>
 
   <!-- ════════════════════════════════════════════════════════════════
-       NAVBAR — Navegación principal fija / Fixed main navigation
+       MOBILE NAV — Menú de pantalla completa / Full-screen menu
        ════════════════════════════════════════════════════════════════ -->
-  <nav id="navbar" class="navbar fixed top-0 inset-x-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div id="mobile-nav" class="mobile-nav">
+    <button class="mobile-close" id="mobile-close" aria-label="Cerrar menú">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#inicio"             onclick="closeMobileNav()">Inicio</a>
+    <a href="#proceso"            onclick="closeMobileNav()">Proceso</a>
+    <a href="#servicios"          onclick="closeMobileNav()">Servicios</a>
+    <a href="#madera-plastica"    onclick="closeMobileNav()">Madera Plástica</a>
+    <a href="#nosotros"           onclick="closeMobileNav()">Nosotros</a>
+    <a href="#contacto"           onclick="closeMobileNav()">Contacto</a>
+    <a href="#contacto"           onclick="closeMobileNav()" class="btn btn-green" style="margin-top:0.5rem">
+      <i class="fa-solid fa-paper-plane text-xs"></i> Cotizar
+    </a>
+  </div>
 
-      <!-- Barra principal / Main bar -->
-      <div class="flex items-center justify-between h-16 lg:h-20">
+  <!-- ════════════════════════════════════════════════════════════════
+       NAVBAR — Navegación principal / Main navigation
+       ════════════════════════════════════════════════════════════════ -->
+  <nav id="nav" class="nav">
+    <a href="#inicio">
+      <img src="logo_final.png" alt="A Reintegrar" class="nav-logo" />
+    </a>
 
-        <!-- Logo -->
-        <a href="#inicio" class="flex items-center gap-3 flex-shrink-0">
-          <img src="logo_final.png"
-               alt="Grupo Empresarial A Reintegrar — Logo"
-               class="h-10 lg:h-12 w-auto object-contain" />
-        </a>
+    <div class="nav-links">
+      <a href="#proceso"         class="nav-link">Proceso</a>
+      <a href="#servicios"       class="nav-link">Servicios</a>
+      <a href="#madera-plastica" class="nav-link">Madera Plástica</a>
+      <a href="#nosotros"        class="nav-link">Nosotros</a>
+      <a href="#contacto"        class="nav-link">Contacto</a>
+    </div>
 
-        <!-- Links (escritorio / desktop) -->
-        <div class="hidden lg:flex items-center gap-7">
-          <a href="#inicio"             class="nav-link text-sm font-heading font-medium">Inicio</a>
-          <a href="#economia-circular"  class="nav-link text-sm font-heading font-medium">Economía Circular</a>
-          <a href="#servicios"          class="nav-link text-sm font-heading font-medium">Servicios</a>
-          <a href="#productos"          class="nav-link text-sm font-heading font-medium">Productos</a>
-          <a href="#nosotros"           class="nav-link text-sm font-heading font-medium">Nosotros</a>
-          <a href="#contacto"           class="nav-link text-sm font-heading font-medium">Contacto</a>
-        </div>
-
-        <!-- CTA + hamburguesa / CTA + hamburger -->
-        <div class="flex items-center gap-3">
-          <a href="#contacto"
-             class="hidden lg:inline-flex btn-primary text-sm py-2.5 px-5">
-            <i class="fa-solid fa-paper-plane text-xs"></i> Cotizar
-          </a>
-          <!-- Botón menú móvil / Mobile menu toggle -->
-          <button id="menu-btn"
-                  class="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
-                  aria-label="Abrir menú / Open menu">
-            <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Menú desplegable móvil / Mobile dropdown menu -->
-      <div id="mobile-menu">
-        <div class="border-t border-white/10 flex flex-col gap-1 py-3">
-          <a href="#inicio"            onclick="closeMenu()" class="nav-link py-2.5 px-2 text-sm font-heading font-medium rounded-lg hover:bg-white/5 transition-colors">Inicio</a>
-          <a href="#economia-circular" onclick="closeMenu()" class="nav-link py-2.5 px-2 text-sm font-heading font-medium rounded-lg hover:bg-white/5 transition-colors">Economía Circular</a>
-          <a href="#servicios"         onclick="closeMenu()" class="nav-link py-2.5 px-2 text-sm font-heading font-medium rounded-lg hover:bg-white/5 transition-colors">Servicios</a>
-          <a href="#productos"         onclick="closeMenu()" class="nav-link py-2.5 px-2 text-sm font-heading font-medium rounded-lg hover:bg-white/5 transition-colors">Productos</a>
-          <a href="#nosotros"          onclick="closeMenu()" class="nav-link py-2.5 px-2 text-sm font-heading font-medium rounded-lg hover:bg-white/5 transition-colors">Nosotros</a>
-          <a href="#contacto"          onclick="closeMenu()" class="nav-link py-2.5 px-2 text-sm font-heading font-medium rounded-lg hover:bg-white/5 transition-colors">Contacto</a>
-          <a href="#contacto"          onclick="closeMenu()" class="btn-primary w-fit mt-2 text-sm">
-            <i class="fa-solid fa-paper-plane text-xs"></i> Cotizar
-          </a>
-        </div>
-      </div>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <a href="#contacto" class="nav-cta">Cotizar</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </nav>
 
   <!-- ════════════════════════════════════════════════════════════════
-       HERO — Sección principal de 3 paneles / 3-panel main hero
+       HERO — Editorial Eco Planet style con filmstrip de fotos
+       Eco Planet editorial style with photo filmstrip
        ════════════════════════════════════════════════════════════════ -->
-  <section id="inicio" class="hero pt-16 lg:pt-20">
+  <section id="inicio" class="hero">
 
-    <!-- Tres paneles / Three panels -->
-    <div class="flex flex-col lg:flex-row" style="min-height: calc(100vh - 5rem);">
-
-      <!-- Panel 1 — Transformamos residuos / We transform waste -->
-      <div class="hero-panel hero-p1 flex flex-col justify-end p-8 lg:p-12">
-        <!-- Ícono decorativo / Decorative icon -->
-        <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
-          <i class="fa-solid fa-recycle text-3xl text-green-300"></i>
-        </div>
-        <h1 class="font-heading font-black text-white text-3xl lg:text-4xl xl:text-5xl leading-tight mb-3">
-          Transformamos<br/>
-          <span class="text-green-300">residuos</span> en<br/>
-          nuevas oportunidades
-        </h1>
-        <p class="text-white/65 text-sm lg:text-base font-body leading-relaxed mb-6 max-w-xs">
-          Impulsamos la economía circular para un futuro más limpio y sostenible.
-        </p>
-        <a href="#nosotros" class="btn-outline w-fit">
-          Conócenos <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-
-      <!-- Panel 2 — Soluciones integrales / Integrated solutions -->
-      <div class="hero-panel hero-p2 flex flex-col justify-end p-8 lg:p-12">
-        <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
-          <i class="fa-solid fa-industry text-3xl text-blue-300"></i>
-        </div>
-        <h2 class="font-heading font-black text-white text-3xl lg:text-4xl xl:text-5xl leading-tight mb-3">
-          Soluciones<br/>
-          <span class="text-blue-300">integrales</span> en<br/>
-          gestión de residuos
-        </h2>
-        <p class="text-white/65 text-sm lg:text-base font-body leading-relaxed mb-6 max-w-xs">
-          Recuperamos, transformamos y comercializamos materiales con calidad y eficiencia.
-        </p>
-        <a href="#servicios" class="btn-outline w-fit">
-          Nuestros servicios <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-
-      <!-- Panel 3 — Madera plástica / Plastic wood -->
-      <div class="hero-panel hero-p3 flex flex-col justify-end p-8 lg:p-12">
-        <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
-          <i class="fa-solid fa-seedling text-3xl text-emerald-300"></i>
-        </div>
-        <h2 class="font-heading font-black text-white text-3xl lg:text-4xl xl:text-5xl leading-tight mb-3">
-          Madera plástica:<br/>
-          <span class="text-emerald-300">resistencia</span> que<br/>
-          cuida el planeta
-        </h2>
-        <p class="text-white/65 text-sm lg:text-base font-body leading-relaxed mb-6 max-w-xs">
-          Fabricamos productos sostenibles que reemplazan la madera convencional.
-        </p>
-        <a href="#madera-plastica" class="btn-primary w-fit">
-          Ver productos <i class="fa-solid fa-arrow-right text-xs"></i>
-        </a>
-      </div>
-
+    <!-- Fila superior del hero / Hero top row -->
+    <div class="hero-top hero-anim-1">
+      <span class="hero-eyebrow">
+        Grupo Empresarial · Malambo, Colombia
+      </span>
+      <span class="hero-tagline">
+        Operador integral de economía circular
+      </span>
     </div>
 
-    <!-- Indicador de scroll / Scroll down indicator -->
-    <div class="bg-[#0D1B1E] flex justify-center py-5">
-      <a href="#cifras" class="text-white/30 hover:text-green-400 transition-colors">
-        <i class="fa-solid fa-chevron-down text-xl bounce"></i>
-      </a>
+    <!-- Titular display gigante / Giant display headline -->
+    <div class="hero-display hero-anim-2">
+      <h1>
+        <span class="block">DEL RESIDUO</span>
+        <span class="block line-accent">AL VALOR.</span>
+      </h1>
     </div>
-  </section>
 
-  <!-- ════════════════════════════════════════════════════════════════
-       CIFRAS DE IMPACTO / IMPACT NUMBERS
-       ════════════════════════════════════════════════════════════════ -->
-  <section id="cifras" class="bg-[#060E10] py-12 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-
-        <!-- Toneladas recicladas / Tons recycled -->
-        <div class="reveal">
-          <div class="font-heading font-black text-4xl lg:text-5xl text-green-400 num-glow counter"
-               data-target="5000" data-suffix="+">0</div>
-          <div class="text-white/45 text-xs font-body mt-1.5 uppercase tracking-wider">Toneladas procesadas</div>
-        </div>
-
-        <!-- Clientes y aliados / Clients & partners -->
-        <div class="reveal" style="transition-delay:.08s">
-          <div class="font-heading font-black text-4xl lg:text-5xl text-blue-400 counter"
-               data-target="120" data-suffix="+">0</div>
-          <div class="text-white/45 text-xs font-body mt-1.5 uppercase tracking-wider">Clientes activos</div>
-        </div>
-
-        <!-- Toneladas CO₂ evitadas / CO₂ tons avoided -->
-        <div class="reveal" style="transition-delay:.16s">
-          <div class="font-heading font-black text-4xl lg:text-5xl text-emerald-400 counter"
-               data-target="850" data-suffix="+">0</div>
-          <div class="text-white/45 text-xs font-body mt-1.5 uppercase tracking-wider">Ton CO₂ evitadas</div>
-        </div>
-
-        <!-- Años de experiencia / Years of experience -->
-        <div class="reveal" style="transition-delay:.24s">
-          <div class="font-heading font-black text-4xl lg:text-5xl text-green-300 counter"
-               data-target="8" data-suffix="">0</div>
-          <div class="text-white/45 text-xs font-body mt-1.5 uppercase tracking-wider">Años de experiencia</div>
-        </div>
-
+    <!-- Filmstrip: 4 fotos verticales / 4 vertical photos filmstrip -->
+    <!--
+      Fotos usadas / Photos used:
+      1. Materias primas (sorted colorful bins) — very visual
+      2. Residuos peligrosos (scrap metal pile) — industrial
+      3. Residuos sólidos (plastic bales) — scale
+      4. Madera plástica (garden furniture) — final product / transformación
+    -->
+    <div class="filmstrip hero-anim-3">
+      <div class="strip">
+        <img src="Imagenes%20para%20agregar%20la%20web/Materias%20primas%20recuperadas.webp"
+             alt="Materias primas recuperadas — sorted recyclable materials" />
+      </div>
+      <div class="strip">
+        <img src="Imagenes%20para%20agregar%20la%20web/Manejo%20de%20residuos%20peligrosos.jpg"
+             alt="Chatarra y metales — scrap metal for recycling" />
+      </div>
+      <div class="strip">
+        <img src="Imagenes%20para%20agregar%20la%20web/Residuos%20s%C3%B3lidos%20aprovechables.jpg"
+             alt="Residuos sólidos prensados — baled solid waste" />
+      </div>
+      <div class="strip">
+        <img src="Imagenes%20para%20agregar%20la%20web/madera%20pl%C3%A1stica.jpg"
+             alt="Madera plástica — plastic wood furniture" />
       </div>
     </div>
-  </section>
 
-  <!-- ════════════════════════════════════════════════════════════════
-       ECONOMÍA CIRCULAR — Proceso de 5 pasos / 5-step process
-       ════════════════════════════════════════════════════════════════ -->
-  <section id="economia-circular" class="py-20 lg:py-28 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Pie editorial con 2 tarjetas de vidrio / Editorial bottom with 2 glass cards -->
+    <div class="hero-editorial hero-anim-4">
 
-      <!-- Encabezado / Header -->
-      <div class="text-center mb-16 reveal">
-        <span class="sec-label">ECONOMÍA CIRCULAR</span>
-        <h2 class="font-heading font-black text-3xl lg:text-5xl text-gray-900 mt-2 mb-4">
-          Economía circular<br/>
-          <span class="text-green-700">que genera valor</span>
-        </h2>
-        <p class="text-gray-500 max-w-2xl mx-auto font-body text-lg leading-relaxed">
-          En Grupo Empresarial A Reintegrar cerramos el ciclo de los materiales para
-          reintegrarlos a la cadena productiva y reducir el impacto ambiental.
+      <!-- Tarjeta izquierda: Propósito / Left card: Purpose -->
+      <div class="editorial-card">
+        <span class="editorial-label">"Propósito"</span>
+        <p>
+          Transformamos residuos en oportunidades económicas, sociales y ambientales
+          mediante soluciones innovadoras de economía circular.
         </p>
-        <div class="green-line"></div>
       </div>
 
-      <!-- Pasos del proceso / Process steps -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4 text-center">
-
-        <!-- Paso 1 — Recolección / Collection -->
-        <div class="process-step relative reveal">
-          <div class="process-icon bg-green-50 border-2 border-green-200 text-green-700">
-            <i class="fa-solid fa-truck-fast"></i>
-          </div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Recolección</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed">
-            Recogemos residuos de diversas fuentes generadoras.
-          </p>
-          <!-- Flecha entre pasos (solo escritorio) / Step arrow (desktop only) -->
-          <i class="fa-solid fa-chevron-right hidden lg:block absolute right-0 top-9 text-green-500 text-lg translate-x-1/2"></i>
-        </div>
-
-        <!-- Paso 2 — Clasificación / Classification -->
-        <div class="process-step relative reveal" style="transition-delay:.1s">
-          <div class="process-icon bg-blue-50 border-2 border-blue-200 text-blue-700">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Clasificación</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed">
-            Separamos y clasificamos materiales para su aprovechamiento.
-          </p>
-          <i class="fa-solid fa-chevron-right hidden lg:block absolute right-0 top-9 text-green-500 text-lg translate-x-1/2"></i>
-        </div>
-
-        <!-- Paso 3 — Transformación / Transformation -->
-        <div class="process-step relative reveal" style="transition-delay:.2s">
-          <div class="process-icon bg-amber-50 border-2 border-amber-200 text-amber-700">
-            <i class="fa-solid fa-gears"></i>
-          </div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Transformación</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed">
-            Procesamos materiales para crear nuevas materias primas y productos.
-          </p>
-          <i class="fa-solid fa-chevron-right hidden lg:block absolute right-0 top-9 text-green-500 text-lg translate-x-1/2"></i>
-        </div>
-
-        <!-- Paso 4 — Comercialización / Commercialization -->
-        <div class="process-step relative reveal" style="transition-delay:.3s">
-          <div class="process-icon bg-teal-50 border-2 border-teal-200 text-teal-700">
-            <i class="fa-solid fa-store"></i>
-          </div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Comercialización</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed">
-            Ofrecemos materiales recuperados y productos de alta calidad.
-          </p>
-          <i class="fa-solid fa-chevron-right hidden lg:block absolute right-0 top-9 text-green-500 text-lg translate-x-1/2"></i>
-        </div>
-
-        <!-- Paso 5 — Impacto positivo / Positive impact -->
-        <div class="process-step reveal" style="transition-delay:.4s">
-          <div class="process-icon bg-green-50 border-2 border-green-300 text-green-800">
-            <i class="fa-solid fa-earth-americas"></i>
-          </div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Impacto positivo</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed">
-            Contribuimos a un planeta más limpio y a un futuro sostenible.
-          </p>
-        </div>
-
+      <!-- Centro: Scroll indicator -->
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span class="scroll-text">scroll</span>
       </div>
 
-      <!-- CTA proceso / Process CTA -->
-      <div class="text-center mt-14 reveal">
-        <a href="#contacto" class="btn-primary text-sm">
-          <i class="fa-solid fa-handshake"></i> Quiero saber más
-        </a>
+      <!-- Tarjeta derecha: Misión / Right card: Mission -->
+      <div class="editorial-card">
+        <span class="editorial-label">"Misión"</span>
+        <p>
+          Impulsar la transición hacia una economía circular mediante la recuperación,
+          transformación y comercialización de materiales reciclables.
+        </p>
       </div>
 
     </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       SERVICIOS / SERVICES
+       PROCESO — Numerado Eco Planet style / Eco Planet numbered steps
        ════════════════════════════════════════════════════════════════ -->
-  <section id="servicios" class="py-20 lg:py-28 bg-[#1C2526]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="proceso" class="proceso">
+    <div class="proceso-grid">
 
-      <!-- Encabezado / Header -->
-      <div class="text-center mb-14 reveal">
-        <span class="sec-label sec-label-inv">NUESTROS SERVICIOS</span>
-        <h2 class="font-heading font-black text-3xl lg:text-5xl text-white mt-2 mb-4">
-          ¿Qué <span class="text-green-400">hacemos</span> por ti?
-        </h2>
-        <p class="text-white/50 max-w-2xl mx-auto font-body text-lg">
+      <!-- Foto con texto superpuesto / Photo with overlaid text -->
+      <div class="proceso-photo reveal">
+        <img src="Imagenes%20para%20agregar%20la%20web/Soluciones%20de%20econom%C3%ADa%20circular.jpg"
+             alt="Economía circular — aerial forest with eco transport icons" />
+        <div class="proceso-photo-overlay"></div>
+        <div class="proceso-photo-text">
+          <p class="proceso-photo-big">
+            Economía<br/>
+            circular<br/>
+            <span>que genera<br/>valor.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Pasos numerados / Numbered steps -->
+      <div class="proceso-steps reveal" style="transition-delay:.15s">
+        <div class="proceso-header">
+          <span class="section-label">NUESTRO PROCESO</span>
+          <h2>Cómo cerramos el ciclo</h2>
+          <p>
+            Reintegramos materiales a la cadena productiva reduciendo el impacto
+            ambiental en cada etapa del proceso.
+          </p>
+        </div>
+
+        <!-- Paso 01 — Recolección / Collection -->
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <div class="step-title">
+              <i class="fa-solid fa-truck-fast" style="color:var(--accent);font-size:.75rem"></i>
+              Recolección:
+            </div>
+            <p class="step-desc">
+              Recogemos residuos de empresas, industrias y hogares en Malambo y la región Caribe.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paso 02 — Clasificación / Classification -->
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <div class="step-title">
+              <i class="fa-solid fa-layer-group" style="color:var(--accent);font-size:.75rem"></i>
+              Clasificación:
+            </div>
+            <p class="step-desc">
+              Separamos y clasificamos los materiales por tipo: metales, polímeros, fibras y vidrio.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paso 03 — Transformación / Transformation -->
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <div class="step-title">
+              <i class="fa-solid fa-gears" style="color:var(--accent);font-size:.75rem"></i>
+              Transformación:
+            </div>
+            <p class="step-desc">
+              Procesamos los materiales para crear nuevas materias primas y productos sostenibles.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paso 04 — Comercialización / Commercialization -->
+        <div class="step">
+          <span class="step-num">04</span>
+          <div>
+            <div class="step-title">
+              <i class="fa-solid fa-store" style="color:var(--accent);font-size:.75rem"></i>
+              Comercialización:
+            </div>
+            <p class="step-desc">
+              Distribuimos materiales recuperados y productos de alta calidad a la industria.
+            </p>
+          </div>
+        </div>
+
+        <!-- Paso 05 — Impacto positivo / Positive impact -->
+        <div class="step">
+          <span class="step-num">05</span>
+          <div>
+            <div class="step-title">
+              <i class="fa-solid fa-earth-americas" style="color:var(--accent);font-size:.75rem"></i>
+              Impacto positivo:
+            </div>
+            <p class="step-desc">
+              Contribuimos a reducir el CO₂, evitar vertederos y construir un planeta más limpio.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SERVICIOS — Tarjetas con fotos reales / Cards with real photos
+       ════════════════════════════════════════════════════════════════ -->
+  <section id="servicios" class="servicios">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div class="reveal">
+        <span class="section-label">NUESTROS SERVICIOS</span>
+        <h2 class="section-h2">¿Qué <span class="ghost">hacemos</span><br/>por ti?</h2>
+        <p class="section-sub">
           Gestionamos integralmente residuos y materiales aprovechables para
           reincorporarlos a la cadena productiva.
         </p>
-        <div class="green-line"></div>
+      </div>
+    </div>
+
+    <!-- Grid 3×2 con fotos reales / 3×2 grid with real photos -->
+    <div class="svc-grid">
+
+      <!-- Card 1 — CHATARRA (foto: pila de scrap metal / scrap metal pile photo) -->
+      <div class="svc-card svc-card-featured reveal">
+        <img class="svc-photo"
+             src="Imagenes%20para%20agregar%20la%20web/Manejo%20de%20residuos%20peligrosos.jpg"
+             alt="Chatarra — scrap metal pile ready for recycling" />
+        <div class="svc-overlay"></div>
+        <span class="svc-tag">Chatarra</span>
+        <div class="svc-content">
+          <div class="svc-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+          <div class="svc-title">Comercialización de chatarra</div>
+          <p class="svc-desc">
+            Compra y venta de metales ferrosos y no ferrosos — electrodomésticos, maquinaria,
+            estructuras — para reintegrarlos al ciclo productivo industrial.
+          </p>
+        </div>
       </div>
 
-      <!-- Grid 3×2 de servicios / 3×2 services grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-        <!-- Servicio 1 — Chatarra / Scrap metal -->
-        <div class="svc-card reveal">
-          <div class="svc-bg sb-1"></div>
-          <div class="svc-overlay"></div>
-          <div class="relative z-10 p-6">
-            <div class="w-11 h-11 rounded-xl bg-green-500/20 border border-green-400/30
-                        flex items-center justify-center mb-4">
-              <i class="fa-solid fa-weight-hanging text-green-400"></i>
-            </div>
-            <h3 class="font-heading font-bold text-white text-lg mb-2">
-              Comercialización de chatarra
-            </h3>
-            <p class="text-white/60 text-sm font-body leading-relaxed">
-              Compra y venta de metales ferrosos y no ferrosos para reintegrarlos
-              al ciclo productivo industrial.
-            </p>
-          </div>
+      <!-- Card 2 — RESIDUOS PELIGROSOS (foto: inspector con tambores / inspector with drums) -->
+      <div class="svc-card reveal" style="transition-delay:.08s">
+        <img class="svc-photo"
+             src="Imagenes%20para%20agregar%20la%20web/Una%20de%20residuos%20peligrosos%20y%20CLP%20-%20Comunidad%20ISM.jpg"
+             alt="Residuos peligrosos — hazardous waste inspector with hazmat drums" />
+        <div class="svc-overlay"></div>
+        <span class="svc-tag">RESPEL</span>
+        <div class="svc-content">
+          <div class="svc-icon"><i class="fa-solid fa-biohazard"></i></div>
+          <div class="svc-title">Manejo de residuos peligrosos</div>
+          <p class="svc-desc">
+            Gestión responsable conforme a la normativa ambiental colombiana.
+          </p>
         </div>
-
-        <!-- Servicio 2 — Residuos peligrosos / Hazardous waste -->
-        <div class="svc-card reveal" style="transition-delay:.08s">
-          <div class="svc-bg sb-2"></div>
-          <div class="svc-overlay"></div>
-          <div class="relative z-10 p-6">
-            <div class="w-11 h-11 rounded-xl bg-blue-500/20 border border-blue-400/30
-                        flex items-center justify-center mb-4">
-              <i class="fa-solid fa-biohazard text-blue-400"></i>
-            </div>
-            <h3 class="font-heading font-bold text-white text-lg mb-2">
-              Manejo de residuos peligrosos
-            </h3>
-            <p class="text-white/60 text-sm font-body leading-relaxed">
-              Gestión responsable y segura de residuos peligrosos conforme
-              a la normativa ambiental vigente.
-            </p>
-          </div>
-        </div>
-
-        <!-- Servicio 3 — Residuos sólidos / Solid waste -->
-        <div class="svc-card reveal" style="transition-delay:.16s">
-          <div class="svc-bg sb-3"></div>
-          <div class="svc-overlay"></div>
-          <div class="relative z-10 p-6">
-            <div class="w-11 h-11 rounded-xl bg-green-500/20 border border-green-400/30
-                        flex items-center justify-center mb-4">
-              <i class="fa-solid fa-boxes-stacked text-green-400"></i>
-            </div>
-            <h3 class="font-heading font-bold text-white text-lg mb-2">
-              Residuos sólidos aprovechables
-            </h3>
-            <p class="text-white/60 text-sm font-body leading-relaxed">
-              Compra y venta de cartón, PET, vidrio y papel para su
-              recuperación y reciclaje eficiente.
-            </p>
-          </div>
-        </div>
-
-        <!-- Servicio 4 — Materias primas / Raw materials -->
-        <div class="svc-card reveal" style="transition-delay:.08s">
-          <div class="svc-bg sb-4"></div>
-          <div class="svc-overlay"></div>
-          <div class="relative z-10 p-6">
-            <div class="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-400/30
-                        flex items-center justify-center mb-4">
-              <i class="fa-solid fa-cubes text-amber-400"></i>
-            </div>
-            <h3 class="font-heading font-bold text-white text-lg mb-2">
-              Materias primas recuperadas
-            </h3>
-            <p class="text-white/60 text-sm font-body leading-relaxed">
-              Polietileno, polipropileno y otros polímeros recuperados
-              para nuevas cadenas de producción.
-            </p>
-          </div>
-        </div>
-
-        <!-- Servicio 5 — Madera plástica / Plastic wood -->
-        <div class="svc-card reveal" style="transition-delay:.16s">
-          <div class="svc-bg sb-5"></div>
-          <div class="svc-overlay"></div>
-          <div class="relative z-10 p-6">
-            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/30
-                        flex items-center justify-center mb-4">
-              <i class="fa-solid fa-tree text-emerald-400"></i>
-            </div>
-            <h3 class="font-heading font-bold text-white text-lg mb-2">
-              Producción de madera plástica
-            </h3>
-            <p class="text-white/60 text-sm font-body leading-relaxed">
-              Fabricación y comercialización de madera plástica de alta
-              durabilidad para múltiples aplicaciones.
-            </p>
-          </div>
-        </div>
-
-        <!-- Servicio 6 — Economía circular / Circular economy consulting -->
-        <div class="svc-card reveal" style="transition-delay:.24s">
-          <div class="svc-bg sb-6"></div>
-          <div class="svc-overlay"></div>
-          <div class="relative z-10 p-6">
-            <div class="w-11 h-11 rounded-xl bg-teal-500/20 border border-teal-400/30
-                        flex items-center justify-center mb-4">
-              <i class="fa-solid fa-arrows-spin text-teal-400"></i>
-            </div>
-            <h3 class="font-heading font-bold text-white text-lg mb-2">
-              Soluciones de economía circular
-            </h3>
-            <p class="text-white/60 text-sm font-body leading-relaxed">
-              Asesoría integral para implementar modelos de economía circular
-              en tu empresa u organización.
-            </p>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Card 3 — RESIDUOS SÓLIDOS (foto: pacas de plástico / plastic bales) -->
+      <div class="svc-card reveal" style="transition-delay:.08s">
+        <img class="svc-photo"
+             src="Imagenes%20para%20agregar%20la%20web/Residuos%20s%C3%B3lidos%20aprovechables.jpg"
+             alt="Residuos sólidos aprovechables — baled plastic at recycling facility" />
+        <div class="svc-overlay"></div>
+        <span class="svc-tag">PET · Cartón · Vidrio</span>
+        <div class="svc-content">
+          <div class="svc-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <div class="svc-title">Residuos sólidos aprovechables</div>
+          <p class="svc-desc">
+            Compra y venta de cartón, PET, vidrio y papel para su recuperación.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 — MATERIAS PRIMAS (foto: bins clasificados / sorted bins) -->
+      <div class="svc-card reveal" style="transition-delay:.16s">
+        <img class="svc-photo"
+             src="Imagenes%20para%20agregar%20la%20web/Materias%20primas%20recuperadas.webp"
+             alt="Materias primas recuperadas — sorted recyclables in bins" />
+        <div class="svc-overlay"></div>
+        <span class="svc-tag">Polímeros</span>
+        <div class="svc-content">
+          <div class="svc-icon"><i class="fa-solid fa-cubes"></i></div>
+          <div class="svc-title">Materias primas recuperadas</div>
+          <p class="svc-desc">
+            Polietileno, polipropileno y otros materiales para nuevas cadenas productivas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 — MADERA PLÁSTICA (foto: mobiliario / furniture) -->
+      <div class="svc-card reveal" style="transition-delay:.24s">
+        <img class="svc-photo"
+             src="Imagenes%20para%20agregar%20la%20web/madera%20pl%C3%A1stica.jpg"
+             alt="Madera plástica — outdoor furniture made from recycled plastic" />
+        <div class="svc-overlay"></div>
+        <span class="svc-tag">★ Producto estrella</span>
+        <div class="svc-content">
+          <div class="svc-icon"><i class="fa-solid fa-tree"></i></div>
+          <div class="svc-title">Producción de madera plástica</div>
+          <p class="svc-desc">
+            Fabricación y venta de madera plástica 100% reciclada para exteriores, parques y construcción.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 — ECONOMÍA CIRCULAR (foto: bosque aéreo / aerial forest) -->
+      <div class="svc-card reveal" style="transition-delay:.32s">
+        <img class="svc-photo"
+             src="Imagenes%20para%20agregar%20la%20web/Soluciones%20de%20econom%C3%ADa%20circular.jpg"
+             alt="Economía circular — aerial forest view with eco logistics" />
+        <div class="svc-overlay"></div>
+        <span class="svc-tag">Consultoría</span>
+        <div class="svc-content">
+          <div class="svc-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+          <div class="svc-title">Soluciones de economía circular</div>
+          <p class="svc-desc">
+            Asesoría integral para implementar modelos de economía circular en tu organización.
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       PRODUCTOS — Catálogo / Product catalog
+       IMPACTO — Mosaico de estadísticas Forestera-style
+       Forestera-style impact stats mosaic
        ════════════════════════════════════════════════════════════════ -->
-  <section id="productos" class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="impacto">
+    <div class="impacto-grid">
 
-      <!-- Encabezado / Header -->
-      <div class="text-center mb-14 reveal">
-        <span class="sec-label">CATÁLOGO</span>
-        <h2 class="font-heading font-black text-3xl lg:text-5xl text-gray-900 mt-2 mb-4">
-          Nuestros <span class="text-green-700">productos</span>
+      <!-- Texto izquierdo / Left text -->
+      <div class="reveal">
+        <span class="section-label" style="color:#1d4a1d;">NUESTRO IMPACTO</span>
+        <h2 class="impacto-text" style="font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#0a1a0a;line-height:1.1;margin-bottom:1rem;">
+          Real impacto en<br/>el <span style="color:var(--accent)">medio ambiente</span>
         </h2>
-        <p class="text-gray-500 max-w-xl mx-auto font-body text-lg">
-          Materiales recuperados y productos sostenibles de alta calidad para la industria.
+        <p style="font-size:.875rem;line-height:1.75;color:rgba(10,26,10,.55);max-width:380px;margin-bottom:2rem;">
+          Cada tonelada que procesamos es una tonelada menos en vertederos.
+          Nuestras operaciones en Malambo generan valor ambiental, económico
+          y social para la región Caribe de Colombia.
         </p>
-        <div class="green-line"></div>
+        <a href="#contacto" class="btn btn-green">
+          <i class="fa-solid fa-handshake text-xs"></i> Trabajemos juntos
+        </a>
       </div>
 
-      <!-- Grid de productos / Products grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Mosaico de estadísticas / Stats mosaic -->
+      <div class="stats-mosaic reveal" style="transition-delay:.15s">
 
-        <!-- Polietileno de baja densidad / Low-density polyethylene -->
-        <div class="prod-card reveal">
-          <div class="prod-icon"><i class="fa-solid fa-droplet"></i></div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">
-            Polietileno de baja densidad
-          </h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed mb-4">
-            Material polimérico recuperado ideal para fabricar nuevos productos
-            plásticos, películas y empaques.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-green-50 text-green-700 px-2.5 py-1 rounded-full font-semibold">LDPE</span>
-            <span class="text-xs bg-green-50 text-green-700 px-2.5 py-1 rounded-full font-semibold">Recuperado</span>
-          </div>
+        <!-- Toneladas procesadas / Processed tons -->
+        <div class="stat-block dark">
+          <span class="stat-label">Toneladas procesadas</span>
+          <span class="stat-num counter" data-target="5000" data-suffix="+">0</span>
+          <span class="stat-unit">por año</span>
         </div>
 
-        <!-- Polipropileno / Polypropylene -->
-        <div class="prod-card reveal" style="transition-delay:.08s">
-          <div class="prod-icon"><i class="fa-solid fa-circle-nodes"></i></div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Polipropileno</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed mb-4">
-            Polímero versátil recuperado para empaques, piezas mecánicas,
-            mobiliario y usos industriales diversos.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full font-semibold">PP</span>
-            <span class="text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full font-semibold">Industrial</span>
-          </div>
+        <!-- Impacto climático / Climate impact -->
+        <div class="stat-block accent-bg">
+          <span class="stat-label">Impacto climático</span>
+          <span class="stat-num counter" data-target="60" data-suffix="%">0</span>
+          <span class="stat-unit">menos emisiones</span>
         </div>
 
-        <!-- PET recuperado / Recovered PET -->
-        <div class="prod-card reveal" style="transition-delay:.16s">
-          <div class="prod-icon"><i class="fa-solid fa-bottle-water"></i></div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">PET recuperado</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed mb-4">
-            Polietileno tereftalato recuperado de botellas y envases, listo
-            para reincorporarse a la cadena productiva.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-teal-50 text-teal-700 px-2.5 py-1 rounded-full font-semibold">PET</span>
-            <span class="text-xs bg-teal-50 text-teal-700 px-2.5 py-1 rounded-full font-semibold">Reciclado</span>
-          </div>
+        <!-- Imagen en el mosaico / Image in mosaic -->
+        <div class="stat-img" style="min-height:120px">
+          <img src="Imagenes%20para%20agregar%20la%20web/madera%20pl%C3%A1stica.jpg"
+               alt="Madera plástica producto" style="border-radius:12px;height:100%;object-fit:cover;" />
         </div>
 
-        <!-- Cartón y papel / Cardboard and paper -->
-        <div class="prod-card reveal">
-          <div class="prod-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Cartón y papel</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed mb-4">
-            Fibras celulósicas recuperadas y clasificadas, listas para su
-            proceso de reciclaje industrial.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full font-semibold">Cartón</span>
-            <span class="text-xs bg-amber-50 text-amber-700 px-2.5 py-1 rounded-full font-semibold">Papel</span>
-          </div>
+        <!-- Imagen / Image -->
+        <div class="stat-img" style="min-height:120px">
+          <img src="Imagenes%20para%20agregar%20la%20web/Materias%20primas%20recuperadas.webp"
+               alt="Materias primas clasificadas" style="border-radius:12px;height:100%;object-fit:cover;" />
         </div>
 
-        <!-- Vidrio / Glass -->
-        <div class="prod-card reveal" style="transition-delay:.08s">
-          <div class="prod-icon"><i class="fa-solid fa-wine-glass"></i></div>
-          <h3 class="font-heading font-bold text-gray-800 text-lg mb-2">Vidrio</h3>
-          <p class="text-gray-500 text-sm font-body leading-relaxed mb-4">
-            Vidrio recuperado y clasificado por color para su refundición
-            y fabricación de nuevos envases y materiales.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded-full font-semibold">Claro</span>
-            <span class="text-xs bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded-full font-semibold">Verde</span>
-            <span class="text-xs bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded-full font-semibold">Ámbar</span>
-          </div>
+        <!-- CO₂ evitado / CO₂ avoided -->
+        <div class="stat-block">
+          <span class="stat-label">CO₂ evitado</span>
+          <span class="stat-num counter" style="color:var(--accent)" data-target="850" data-suffix="+">0</span>
+          <span class="stat-unit">ton/año</span>
         </div>
 
-        <!-- Madera plástica (destacada) / Plastic wood (featured) -->
-        <div class="prod-card reveal" style="transition-delay:.16s; border-color:#a5d6a7; background:linear-gradient(135deg,#f1f8f2 0%,#fff 100%)">
-          <div class="prod-icon"
-               style="background:linear-gradient(135deg,rgba(76,175,80,0.22),rgba(27,94,32,0.32))">
-            <i class="fa-solid fa-tree-city"></i>
-          </div>
-          <div class="flex items-center gap-2 mb-2">
-            <h3 class="font-heading font-bold text-gray-800 text-lg">Madera plástica</h3>
-            <span class="text-xs bg-green-600 text-white px-2 py-0.5 rounded-full font-bold">★ ESTRELLA</span>
-          </div>
-          <p class="text-gray-500 text-sm font-body leading-relaxed mb-4">
-            Tablas y perfiles fabricados 100% con polímeros reciclados para
-            construcción, mobiliario urbano y exteriores.
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-green-100 text-green-800 px-2.5 py-1 rounded-full font-bold">100% Reciclado</span>
-            <span class="text-xs bg-green-50 text-green-700 px-2.5 py-1 rounded-full font-semibold">Durable</span>
-            <span class="text-xs bg-green-50 text-green-700 px-2.5 py-1 rounded-full font-semibold">Sin mantenimiento</span>
-          </div>
+        <!-- Años de experiencia / Years experience -->
+        <div class="stat-block dark">
+          <span class="stat-label">Años de experiencia</span>
+          <span class="stat-num counter" data-target="8" data-suffix="">0</span>
+          <span class="stat-unit">en economía circular</span>
         </div>
 
       </div>
@@ -947,557 +1383,409 @@
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       MADERA PLÁSTICA — Producto estrella / Star product
+       MADERA PLÁSTICA — Foto full + texto display / Full photo + display text
+       Inspired by: African Journey oversized text + Forestera full-bleed hero
        ════════════════════════════════════════════════════════════════ -->
-  <section id="madera-plastica" class="py-20 lg:py-28 pw-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-14 items-center">
+  <section id="madera-plastica" class="madera">
 
-        <!-- Texto / Text -->
-        <div class="reveal">
-          <span class="sec-label sec-label-inv">PRODUCTO ESTRELLA</span>
-          <h2 class="font-heading font-black text-4xl lg:text-5xl text-white mt-3 mb-5 leading-tight">
-            Madera plástica:<br/>
-            <span class="text-green-300">productos que<br/>transforman espacios</span>
-          </h2>
-          <p class="text-white/70 text-lg font-body mb-8 leading-relaxed">
-            Fabricada 100% con polímeros reciclados, nuestra madera plástica es más resistente,
-            más duradera y más sostenible que la madera convencional. No se pudre, no se astilla
-            y no requiere mantenimiento.
-          </p>
+    <!-- Foto de fondo / Background photo -->
+    <img class="madera-photo"
+         src="Imagenes%20para%20agregar%20la%20web/madera%20pl%C3%A1stica.jpg"
+         alt="Madera plástica — outdoor benches and table made from 100% recycled plastic" />
+    <div class="madera-overlay"></div>
 
-          <!-- Ventajas / Advantages checklist -->
-          <div class="grid grid-cols-2 gap-3 mb-9">
-            <div class="flex items-center gap-2.5">
-              <i class="fa-solid fa-circle-check text-green-400"></i>
-              <span class="text-white/80 text-sm font-body">Alta durabilidad</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fa-solid fa-circle-check text-green-400"></i>
-              <span class="text-white/80 text-sm font-body">Resistente a la humedad</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fa-solid fa-circle-check text-green-400"></i>
-              <span class="text-white/80 text-sm font-body">Sin mantenimiento</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fa-solid fa-circle-check text-green-400"></i>
-              <span class="text-white/80 text-sm font-body">100% reciclado</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fa-solid fa-circle-check text-green-400"></i>
-              <span class="text-white/80 text-sm font-body">Resistente a insectos</span>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <i class="fa-solid fa-circle-check text-green-400"></i>
-              <span class="text-white/80 text-sm font-body">Fácil instalación</span>
-            </div>
-          </div>
+    <div class="madera-content">
 
-          <a href="#contacto" class="btn-primary text-base py-4 px-7">
-            <i class="fa-solid fa-file-invoice"></i> Solicitar cotización
-          </a>
+      <!-- Texto display gigante / Giant display text -->
+      <div class="reveal">
+        <span class="section-label">PRODUCTO ESTRELLA</span>
+        <div class="madera-big" style="margin-top:.75rem">
+          <span class="block">MADERA</span>
+          <span class="block outline">PLÁSTICA</span>
+          <span class="block green">100%</span>
+          <span class="block" style="-webkit-text-stroke:1px rgba(255,255,255,.18);color:transparent">RECICLADA</span>
+        </div>
+        <p style="font-size:.875rem;line-height:1.75;color:rgba(255,255,255,.5);margin-top:1.5rem;max-width:320px;">
+          Más resistente. Sin mantenimiento. Dura 3 veces más que la madera
+          convencional. Y 100% fabricada con plástico reciclado.
+        </p>
+      </div>
+
+      <!-- Tarjeta de vidrio / Glass card -->
+      <div class="madera-glass reveal" style="transition-delay:.2s">
+        <h3><i class="fa-solid fa-circle-check mr-2" style="font-size:.9rem"></i> Ventajas clave</h3>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-check"></i> Alta durabilidad — resiste humedad, insectos y UV</li>
+          <li><i class="fa-solid fa-check"></i> Cero mantenimiento — no se pinta ni barniza</li>
+          <li><i class="fa-solid fa-check"></i> Versátil — múltiples colores y secciones</li>
+          <li><i class="fa-solid fa-check"></i> Ecológica — reduce la deforestación</li>
+          <li><i class="fa-solid fa-check"></i> 100% polímeros reciclados nacionales</li>
+        </ul>
+
+        <!-- Chips de aplicaciones / Application chips -->
+        <div class="chips">
+          <span class="chip">Bancas parques</span>
+          <span class="chip">Decks exteriores</span>
+          <span class="chip">Cercas</span>
+          <span class="chip">Muelles</span>
+          <span class="chip">Mobiliario urbano</span>
+          <span class="chip">Pérgolas</span>
+          <span class="chip">Juegos infantiles</span>
+          <span class="chip">Estibas</span>
+          <span class="chip">Senderos</span>
+          <span class="chip">Fachadas</span>
         </div>
 
-        <!-- Aplicaciones + estadística / Applications + stat -->
-        <div class="reveal" style="transition-delay:.18s">
-          <p class="text-white/55 text-xs font-heading font-semibold uppercase tracking-widest mb-5">
-            ¿Para qué la puedes usar?
-          </p>
-          <div class="flex flex-wrap gap-2.5 mb-10">
-            <span class="app-chip"><i class="fa-solid fa-bench-tree text-green-400"></i> Bancas para parques</span>
-            <span class="app-chip"><i class="fa-solid fa-chair text-green-400"></i> Mesas y sillas</span>
-            <span class="app-chip"><i class="fa-solid fa-fence text-green-400"></i> Cercas y cerramientos</span>
-            <span class="app-chip"><i class="fa-solid fa-grip-lines text-green-400"></i> Decks para exteriores</span>
-            <span class="app-chip"><i class="fa-solid fa-child-reaching text-green-400"></i> Juegos infantiles</span>
-            <span class="app-chip"><i class="fa-solid fa-pallet text-green-400"></i> Estibas</span>
-            <span class="app-chip"><i class="fa-solid fa-signs-post text-green-400"></i> Senderos ecológicos</span>
-            <span class="app-chip"><i class="fa-solid fa-building text-green-400"></i> Fachadas</span>
-            <span class="app-chip"><i class="fa-solid fa-water text-green-400"></i> Muelles</span>
-            <span class="app-chip"><i class="fa-solid fa-city text-green-400"></i> Mobiliario urbano</span>
-            <span class="app-chip"><i class="fa-solid fa-umbrella text-green-400"></i> Pérgolas</span>
-            <span class="app-chip"><i class="fa-solid fa-hard-hat text-green-400"></i> Construcción</span>
+        <!-- Estadística destacada / Feature stat -->
+        <div class="madera-stat">
+          <div class="madera-stat-icon"><i class="fa-solid fa-infinity"></i></div>
+          <div>
+            <div class="madera-stat-num">+50 años</div>
+            <div class="madera-stat-text">de vida útil estimada</div>
+          </div>
+        </div>
+
+        <a href="#contacto" class="btn btn-green" style="margin-top:1.5rem;width:100%;justify-content:center">
+          <i class="fa-solid fa-file-invoice text-xs"></i> Solicitar cotización
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       NOSOTROS — Dark editorial layout / Layout editorial oscuro
+       ════════════════════════════════════════════════════════════════ -->
+  <section id="nosotros" class="nosotros">
+    <div class="nosotros-grid">
+
+      <!-- Cita grande + eslogan / Large quote + slogan -->
+      <div class="reveal">
+        <span class="section-label">QUIÉNES SOMOS</span>
+        <span class="quote-mark">"</span>
+        <p class="nosotros-quote">
+          Somos una empresa que<br/>
+          transforma <span>residuos</span><br/>
+          en soluciones sostenibles<br/>
+          de alto valor.
+        </p>
+        <p class="nosotros-sub">
+          Desde Malambo, Atlántico, operamos como el aliado estratégico de
+          industrias, constructoras y gestores ambientales que buscan una
+          gestión responsable de sus materiales.
+        </p>
+
+        <!-- Valores en pills / Values as pills -->
+        <div class="valores">
+          <h3>Nuestros valores</h3>
+          <div class="val-row">
+            <span class="val-pill"><i class="fa-solid fa-lightbulb"></i> Innovación</span>
+            <span class="val-pill"><i class="fa-solid fa-leaf"></i> Sostenibilidad</span>
+            <span class="val-pill"><i class="fa-solid fa-earth-americas"></i> Compromiso ambiental</span>
+            <span class="val-pill"><i class="fa-solid fa-handshake"></i> Transparencia</span>
+            <span class="val-pill"><i class="fa-solid fa-people-group"></i> Responsabilidad social</span>
+            <span class="val-pill"><i class="fa-solid fa-star"></i> Calidad</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Misión + Visión / Mission + Vision -->
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="mv-cards">
+
+          <!-- Misión / Mission -->
+          <div class="mv-card" style="background:rgba(29,74,29,.35);">
+            <div class="mv-icon" style="background:rgba(74,158,63,.2);color:var(--bright);">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <div class="mv-h">Misión</div>
+            <p class="mv-p">
+              Impulsar la transición hacia una economía circular mediante la recuperación,
+              transformación y comercialización de materiales reciclables, generando valor
+              ambiental, social y económico para nuestros clientes y comunidades.
+            </p>
           </div>
 
-          <!-- Estadística destacada / Highlight stat -->
-          <div class="p-6 rounded-2xl bg-white/8 border border-white/14 flex items-center gap-5">
-            <div class="w-16 h-16 rounded-2xl bg-green-500/20 border border-green-400/30
-                        flex items-center justify-center flex-shrink-0">
-              <i class="fa-solid fa-infinity text-2xl text-green-400"></i>
+          <!-- Visión / Vision -->
+          <div class="mv-card" style="background:rgba(21,58,92,.35);">
+            <div class="mv-icon" style="background:rgba(21,101,192,.2);color:#64b0f4;">
+              <i class="fa-solid fa-eye"></i>
             </div>
+            <div class="mv-h">Visión</div>
+            <p class="mv-p">
+              Ser una empresa líder en economía circular en Colombia, reconocida por
+              transformar residuos en soluciones innovadoras que contribuyan al
+              desarrollo sostenible y a un futuro más limpio.
+            </p>
+          </div>
+
+          <!-- Público objetivo / Target audience -->
+          <div class="mv-card">
+            <div class="mv-icon" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);">
+              <i class="fa-solid fa-building-user"></i>
+            </div>
+            <div class="mv-h">¿A quién servimos?</div>
+            <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+              <span style="font-size:.7rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:.25rem .7rem;border-radius:50px;">Industrias</span>
+              <span style="font-size:.7rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:.25rem .7rem;border-radius:50px;">Constructoras</span>
+              <span style="font-size:.7rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:.25rem .7rem;border-radius:50px;">Gestores ambientales</span>
+              <span style="font-size:.7rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:.25rem .7rem;border-radius:50px;">Entidades gubernamentales</span>
+              <span style="font-size:.7rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:.25rem .7rem;border-radius:50px;">Recicladores</span>
+              <span style="font-size:.7rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);padding:.25rem .7rem;border-radius:50px;">Hogares</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       CONTACTO — Glassmorphism form / Formulario glassmorfismo
+       ════════════════════════════════════════════════════════════════ -->
+  <section id="contacto" class="contacto">
+    <div class="contacto-inner">
+
+      <!-- Info de contacto / Contact info -->
+      <div class="reveal">
+        <span class="section-label">CONTÁCTANOS</span>
+        <h2 class="contact-info">
+          <span style="font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:white;line-height:1;">
+            ¿Listo para<br/><span style="color:var(--bright)">reintegrar?</span>
+          </span>
+        </h2>
+        <p style="font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.4);margin-top:1rem;margin-bottom:2.5rem;max-width:360px;">
+          Cuéntanos sobre tus residuos o necesidades de materiales.
+          Estamos en Malambo, Atlántico, Colombia.
+        </p>
+
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
-              <div class="font-heading font-black text-3xl text-green-300">+50 años</div>
-              <div class="text-white/55 text-sm font-body mt-0.5">de vida útil estimada</div>
+              <div class="info-label">Sede</div>
+              <div class="info-val">Malambo, Atlántico, Colombia</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <div class="info-label">WhatsApp</div>
+              <!--
+                REEMPLAZAR: actualizar con el número real de la empresa
+                REPLACE: update with the company's real WhatsApp number
+              -->
+              <div class="info-val"><a href="https://wa.me/573000000000">+57 300 000 0000</a></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="info-label">Correo</div>
+              <!--
+                REEMPLAZAR: actualizar con el correo real de la empresa
+                REPLACE: update with the company's real email
+              -->
+              <div class="info-val"><a href="mailto:contacto@areintegrar.com">contacto@areintegrar.com</a></div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div class="info-label">Horario</div>
+              <div class="info-val" style="font-size:.82rem;color:rgba(255,255,255,.65);">
+                Lun–Vie 8am–5pm · Sáb 8am–12pm
+              </div>
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       NOSOTROS — Misión, visión, valores / Mission, vision, values
-       ════════════════════════════════════════════════════════════════ -->
-  <section id="nosotros" class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Encabezado / Header -->
-      <div class="text-center mb-16 reveal">
-        <span class="sec-label">QUIÉNES SOMOS</span>
-        <h2 class="font-heading font-black text-3xl lg:text-5xl text-gray-900 mt-2 mb-4">
-          Nuestra <span class="text-green-700">esencia</span>
-        </h2>
-        <p class="text-gray-500 max-w-xl mx-auto font-body text-lg">
-          Somos un operador integral de economía circular que transforma residuos
-          en nuevas oportunidades para las industrias, las ciudades y el planeta.
-        </p>
-        <div class="green-line"></div>
+        <a href="https://wa.me/573000000000?text=Hola%2C%20me%20interesa%20conocer%20sus%20servicios%20de%20econom%C3%ADa%20circular."
+           target="_blank" rel="noopener"
+           class="btn btn-wa" style="font-size:.85rem;">
+          <i class="fa-brands fa-whatsapp" style="font-size:1.1rem"></i>
+          Chatear por WhatsApp
+        </a>
       </div>
 
-      <!-- Misión y Visión / Mission and Vision -->
-      <div class="grid md:grid-cols-2 gap-6 mb-16">
+      <!-- Formulario de vidrio / Glass form -->
+      <div class="contact-form-wrap reveal" style="transition-delay:.2s">
+        <h3>Envíanos un mensaje</h3>
 
-        <!-- Misión / Mission -->
-        <div class="bg-gradient-to-br from-green-900 to-green-800 rounded-2xl p-8 reveal">
-          <div class="w-11 h-11 bg-green-300/15 border border-green-300/25 rounded-xl
-                      flex items-center justify-center mb-5">
-            <i class="fa-solid fa-bullseye text-green-300 text-lg"></i>
-          </div>
-          <h3 class="font-heading font-bold text-white text-2xl mb-3">Misión</h3>
-          <p class="text-white/72 font-body leading-relaxed">
-            Impulsar la transición hacia una economía circular mediante la recuperación,
-            transformación y comercialización de materiales reciclables, generando valor
-            ambiental, social y económico para nuestros clientes y comunidades.
-          </p>
-        </div>
-
-        <!-- Visión / Vision -->
-        <div class="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 reveal"
-             style="transition-delay:.1s">
-          <div class="w-11 h-11 bg-blue-300/15 border border-blue-300/25 rounded-xl
-                      flex items-center justify-center mb-5">
-            <i class="fa-solid fa-eye text-blue-300 text-lg"></i>
-          </div>
-          <h3 class="font-heading font-bold text-white text-2xl mb-3">Visión</h3>
-          <p class="text-white/72 font-body leading-relaxed">
-            Ser una empresa líder en economía circular en Colombia, reconocida por
-            transformar residuos en soluciones innovadoras que contribuyan al desarrollo
-            sostenible y a un futuro más limpio.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Valores / Core values -->
-      <div class="text-center mb-10 reveal">
-        <h3 class="font-heading font-black text-2xl text-gray-900">
-          Lo que nos <span class="text-green-700">define</span>
-        </h3>
-      </div>
-
-      <!-- Grid de valores / Values grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-
-        <div class="text-center p-5 rounded-2xl hover:bg-green-50 transition-colors reveal">
-          <div class="w-14 h-14 bg-yellow-50 border-2 border-yellow-200 rounded-full
-                      flex items-center justify-center mx-auto mb-3">
-            <i class="fa-solid fa-lightbulb text-yellow-600 text-xl"></i>
-          </div>
-          <div class="font-heading font-bold text-gray-700 text-sm">Innovación</div>
-        </div>
-
-        <div class="text-center p-5 rounded-2xl hover:bg-green-50 transition-colors reveal" style="transition-delay:.05s">
-          <div class="w-14 h-14 bg-green-50 border-2 border-green-200 rounded-full
-                      flex items-center justify-center mx-auto mb-3">
-            <i class="fa-solid fa-leaf text-green-600 text-xl"></i>
-          </div>
-          <div class="font-heading font-bold text-gray-700 text-sm">Sostenibilidad</div>
-        </div>
-
-        <div class="text-center p-5 rounded-2xl hover:bg-green-50 transition-colors reveal" style="transition-delay:.1s">
-          <div class="w-14 h-14 bg-emerald-50 border-2 border-emerald-200 rounded-full
-                      flex items-center justify-center mx-auto mb-3">
-            <i class="fa-solid fa-earth-americas text-emerald-600 text-xl"></i>
-          </div>
-          <div class="font-heading font-bold text-gray-700 text-sm leading-tight">Compromiso ambiental</div>
-        </div>
-
-        <div class="text-center p-5 rounded-2xl hover:bg-green-50 transition-colors reveal" style="transition-delay:.15s">
-          <div class="w-14 h-14 bg-blue-50 border-2 border-blue-200 rounded-full
-                      flex items-center justify-center mx-auto mb-3">
-            <i class="fa-solid fa-handshake text-blue-600 text-xl"></i>
-          </div>
-          <div class="font-heading font-bold text-gray-700 text-sm">Transparencia</div>
-        </div>
-
-        <div class="text-center p-5 rounded-2xl hover:bg-green-50 transition-colors reveal" style="transition-delay:.2s">
-          <div class="w-14 h-14 bg-purple-50 border-2 border-purple-200 rounded-full
-                      flex items-center justify-center mx-auto mb-3">
-            <i class="fa-solid fa-people-group text-purple-600 text-xl"></i>
-          </div>
-          <div class="font-heading font-bold text-gray-700 text-sm leading-tight">Responsabilidad social</div>
-        </div>
-
-        <div class="text-center p-5 rounded-2xl hover:bg-green-50 transition-colors reveal" style="transition-delay:.25s">
-          <div class="w-14 h-14 bg-red-50 border-2 border-red-200 rounded-full
-                      flex items-center justify-center mx-auto mb-3">
-            <i class="fa-solid fa-star text-red-500 text-xl"></i>
-          </div>
-          <div class="font-heading font-bold text-gray-700 text-sm">Calidad</div>
-        </div>
-
-      </div>
-
-      <!-- Eslogan central / Central slogan -->
-      <div class="mt-16 text-center reveal">
-        <blockquote class="font-heading font-black text-2xl lg:text-3xl text-gray-800 max-w-2xl mx-auto leading-snug">
-          "Somos una empresa que transforma
-          <span class="text-green-700">residuos en soluciones sostenibles</span>
-          de alto valor."
-        </blockquote>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       CONTACTO — Formulario + información / Form + info
-       ════════════════════════════════════════════════════════════════ -->
-  <section id="contacto" class="py-20 lg:py-28 bg-[#0D1B1E]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Encabezado / Header -->
-      <div class="text-center mb-14 reveal">
-        <span class="sec-label sec-label-inv">CONTÁCTANOS</span>
-        <h2 class="font-heading font-black text-3xl lg:text-5xl text-white mt-2 mb-4">
-          ¿Listo para <span class="text-green-400">reintegrar</span>?
-        </h2>
-        <p class="text-white/50 max-w-xl mx-auto font-body text-lg">
-          Cuéntanos sobre tus residuos o necesidades. Estamos en
-          Malambo, Atlántico, Colombia.
-        </p>
-        <div class="green-line"></div>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-14">
-
-        <!-- Formulario / Form -->
-        <div class="reveal">
-          <form id="contact-form" onsubmit="handleSubmit(event)" class="space-y-4" novalidate>
+        <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+          <div style="display:flex;flex-direction:column;gap:.85rem;">
 
             <!-- Nombre + Empresa / Name + Company -->
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-white/55 text-xs font-body uppercase tracking-wider block mb-2">
-                  Nombre completo *
-                </label>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nombre *</label>
                 <input type="text" name="nombre" required placeholder="Tu nombre completo"
                        class="c-input" />
               </div>
-              <div>
-                <label class="text-white/55 text-xs font-body uppercase tracking-wider block mb-2">
-                  Empresa
-                </label>
+              <div class="form-group">
+                <label class="form-label">Empresa</label>
                 <input type="text" name="empresa" placeholder="Nombre de tu empresa"
                        class="c-input" />
               </div>
             </div>
 
             <!-- Email + Teléfono / Email + Phone -->
-            <div class="grid sm:grid-cols-2 gap-4">
-              <div>
-                <label class="text-white/55 text-xs font-body uppercase tracking-wider block mb-2">
-                  Correo electrónico *
-                </label>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Correo *</label>
                 <input type="email" name="email" required placeholder="correo@empresa.com"
                        class="c-input" />
               </div>
-              <div>
-                <label class="text-white/55 text-xs font-body uppercase tracking-wider block mb-2">
-                  Teléfono / WhatsApp
-                </label>
+              <div class="form-group">
+                <label class="form-label">Teléfono</label>
                 <input type="tel" name="telefono" placeholder="+57 300 000 0000"
                        class="c-input" />
               </div>
             </div>
 
-            <!-- Servicio de interés / Service of interest -->
-            <div>
-              <label class="text-white/55 text-xs font-body uppercase tracking-wider block mb-2">
-                Servicio de interés *
-              </label>
+            <!-- Servicio / Service -->
+            <div class="form-group">
+              <label class="form-label">Servicio de interés *</label>
               <select name="servicio" required class="c-input">
                 <option value="" disabled selected>Selecciona un servicio...</option>
                 <option value="chatarra">Comercialización de chatarra</option>
-                <option value="residuos-peligrosos">Manejo de residuos peligrosos</option>
-                <option value="residuos-solidos">Residuos sólidos aprovechables</option>
-                <option value="materias-primas">Materias primas recuperadas</option>
-                <option value="madera-plastica">Madera plástica</option>
-                <option value="economia-circular">Soluciones de economía circular</option>
+                <option value="respel">Manejo de residuos peligrosos</option>
+                <option value="solidos">Residuos sólidos aprovechables</option>
+                <option value="materias">Materias primas recuperadas</option>
+                <option value="madera">Madera plástica</option>
+                <option value="circular">Soluciones de economía circular</option>
                 <option value="otro">Otro</option>
               </select>
             </div>
 
             <!-- Mensaje / Message -->
-            <div>
-              <label class="text-white/55 text-xs font-body uppercase tracking-wider block mb-2">
-                Mensaje *
-              </label>
-              <textarea name="mensaje" required rows="4" class="c-input resize-none"
+            <div class="form-group">
+              <label class="form-label">Mensaje *</label>
+              <textarea name="mensaje" required rows="4" class="c-input"
+                        style="resize:none"
                         placeholder="Cuéntanos sobre tus necesidades, tipo y cantidad de material..."></textarea>
             </div>
 
             <!-- Submit -->
-            <button type="submit"
-                    class="btn-primary w-full justify-center text-base py-4">
-              <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+            <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;padding:.95rem 1.8rem;font-size:.82rem;">
+              <i class="fa-solid fa-paper-plane text-xs"></i> Enviar mensaje
             </button>
 
-          </form>
-
-          <!-- Mensaje de éxito / Success message -->
-          <div id="success-msg"
-               class="hidden mt-4 p-4 bg-green-500/14 border border-green-500/28
-                      rounded-xl text-green-400 text-center font-body text-sm">
-            <i class="fa-solid fa-circle-check mr-2"></i>
-            ¡Mensaje enviado! Te contactaremos a la brevedad.
           </div>
-        </div>
+        </form>
 
-        <!-- Información de contacto / Contact info -->
-        <div class="reveal" style="transition-delay:.18s">
-
-          <div class="space-y-6 mb-8">
-
-            <!-- Ubicación / Location -->
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-green-500/14 border border-green-500/22 rounded-xl
-                          flex items-center justify-center flex-shrink-0">
-                <i class="fa-solid fa-location-dot text-green-400 text-lg"></i>
-              </div>
-              <div>
-                <div class="font-heading font-semibold text-white mb-0.5">Ubicación</div>
-                <div class="text-white/55 font-body text-sm">
-                  Malambo, Atlántico, Colombia
-                </div>
-              </div>
-            </div>
-
-            <!-- WhatsApp -->
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-green-500/14 border border-green-500/22 rounded-xl
-                          flex items-center justify-center flex-shrink-0">
-                <i class="fa-brands fa-whatsapp text-green-400 text-lg"></i>
-              </div>
-              <div>
-                <div class="font-heading font-semibold text-white mb-0.5">WhatsApp</div>
-                <!--
-                  REEMPLAZAR: cambiar el número por el real de la empresa
-                  REPLACE: update with the company's actual phone number
-                -->
-                <a href="https://wa.me/573000000000"
-                   target="_blank" rel="noopener"
-                   class="text-green-400 font-body text-sm hover:text-green-300 transition-colors">
-                  +57 300 000 0000
-                </a>
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-green-500/14 border border-green-500/22 rounded-xl
-                          flex items-center justify-center flex-shrink-0">
-                <i class="fa-solid fa-envelope text-green-400 text-lg"></i>
-              </div>
-              <div>
-                <div class="font-heading font-semibold text-white mb-0.5">Correo electrónico</div>
-                <!--
-                  REEMPLAZAR: cambiar por el correo real de la empresa
-                  REPLACE: update with the company's actual email address
-                -->
-                <a href="mailto:contacto@areintegrar.com"
-                   class="text-green-400 font-body text-sm hover:text-green-300 transition-colors">
-                  contacto@areintegrar.com
-                </a>
-              </div>
-            </div>
-
-            <!-- Horario / Hours -->
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-green-500/14 border border-green-500/22 rounded-xl
-                          flex items-center justify-center flex-shrink-0">
-                <i class="fa-solid fa-clock text-green-400 text-lg"></i>
-              </div>
-              <div>
-                <div class="font-heading font-semibold text-white mb-0.5">Horario de atención</div>
-                <div class="text-white/55 font-body text-sm">Lunes – Viernes: 8:00 AM – 5:00 PM</div>
-                <div class="text-white/55 font-body text-sm">Sábado: 8:00 AM – 12:00 PM</div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Botón WhatsApp directo / Direct WhatsApp CTA -->
-          <a href="https://wa.me/573000000000?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20A%20Reintegrar."
-             target="_blank" rel="noopener"
-             class="btn-wa mb-6">
-            <i class="fa-brands fa-whatsapp text-xl"></i>
-            Chatear por WhatsApp ahora
-          </a>
-
-          <!-- Mapa placeholder / Map placeholder -->
-          <!--
-            MEJORA: reemplazar este bloque por un iframe de Google Maps real
-            ENHANCEMENT: replace this block with a real Google Maps iframe
-            <iframe src="https://maps.google.com/embed?..." ...></iframe>
-          -->
-          <div class="rounded-2xl overflow-hidden border border-white/10 h-44
-                      flex flex-col items-center justify-center gap-3"
-               style="background:linear-gradient(135deg,#1C2526,#263238)">
-            <i class="fa-solid fa-map-location-dot text-green-400 text-3xl"></i>
-            <span class="text-white/40 text-sm font-body">Malambo, Atlántico, Colombia</span>
-            <a href="https://maps.google.com/?q=Malambo+Atlantico+Colombia"
-               target="_blank" rel="noopener"
-               class="text-green-400 text-xs hover:underline font-body">
-              Ver en Google Maps →
-            </a>
-          </div>
-
+        <!-- Mensaje de éxito / Success message -->
+        <div id="success-msg"
+             class="hidden"
+             style="margin-top:.75rem;padding:.9rem 1.1rem;background:rgba(74,158,63,.15);border:1px solid rgba(74,158,63,.28);border-radius:10px;font-size:.8rem;color:var(--bright);text-align:center;font-family:'Inter',sans-serif;">
+          <i class="fa-solid fa-circle-check mr-2"></i>
+          ¡Mensaje enviado! Te contactaremos a la brevedad.
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       FOOTER — Pie de página / Footer
+       FOOTER
        ════════════════════════════════════════════════════════════════ -->
-  <footer class="bg-[#060E10] border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+  <footer class="footer">
+    <div class="footer-grid">
 
-      <!-- Grid de columnas / Column grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-        <!-- Marca / Brand column -->
-        <div class="lg:col-span-2">
-          <img src="logo_final.png"
-               alt="A Reintegrar"
-               class="h-11 w-auto object-contain mb-4" />
-          <p class="text-white/42 font-body text-sm leading-relaxed max-w-xs mb-5">
-            Transformamos residuos en oportunidades económicas, sociales y ambientales
-            mediante soluciones innovadoras de economía circular.
-          </p>
-          <!-- Redes sociales / Social media -->
-          <div class="flex gap-3">
-            <a href="#" aria-label="Facebook"
-               class="w-9 h-9 bg-white/7 hover:bg-green-500/18 border border-white/10 hover:border-green-500/28
-                      rounded-lg flex items-center justify-center text-white/45 hover:text-green-400 transition-all">
-              <i class="fa-brands fa-facebook-f text-sm"></i>
-            </a>
-            <a href="#" aria-label="Instagram"
-               class="w-9 h-9 bg-white/7 hover:bg-green-500/18 border border-white/10 hover:border-green-500/28
-                      rounded-lg flex items-center justify-center text-white/45 hover:text-green-400 transition-all">
-              <i class="fa-brands fa-instagram text-sm"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn"
-               class="w-9 h-9 bg-white/7 hover:bg-green-500/18 border border-white/10 hover:border-green-500/28
-                      rounded-lg flex items-center justify-center text-white/45 hover:text-green-400 transition-all">
-              <i class="fa-brands fa-linkedin-in text-sm"></i>
-            </a>
-            <a href="#" aria-label="WhatsApp"
-               class="w-9 h-9 bg-white/7 hover:bg-green-500/18 border border-white/10 hover:border-green-500/28
-                      rounded-lg flex items-center justify-center text-white/45 hover:text-green-400 transition-all">
-              <i class="fa-brands fa-whatsapp text-sm"></i>
-            </a>
-          </div>
+      <!-- Marca / Brand -->
+      <div>
+        <img src="logo_final.png" alt="A Reintegrar" class="footer-logo" />
+        <p class="footer-about">
+          Transformamos residuos en oportunidades económicas, sociales y ambientales
+          mediante soluciones innovadoras de economía circular en Malambo, Colombia.
+        </p>
+        <div class="social-row">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
-
-        <!-- Servicios / Services links -->
-        <div>
-          <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-5">Servicios</h4>
-          <ul class="space-y-3">
-            <li><a href="#servicios" class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Chatarra</a></li>
-            <li><a href="#servicios" class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Residuos peligrosos</a></li>
-            <li><a href="#servicios" class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Residuos sólidos</a></li>
-            <li><a href="#servicios" class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Materias primas</a></li>
-            <li><a href="#madera-plastica" class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Madera plástica</a></li>
-          </ul>
-        </div>
-
-        <!-- Empresa / Company links -->
-        <div>
-          <h4 class="font-heading font-bold text-white text-xs uppercase tracking-wider mb-5">Empresa</h4>
-          <ul class="space-y-3">
-            <li><a href="#nosotros"          class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Quiénes somos</a></li>
-            <li><a href="#economia-circular" class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Economía circular</a></li>
-            <li><a href="#productos"         class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Productos</a></li>
-            <li><a href="#contacto"          class="text-white/42 hover:text-green-400 text-sm font-body transition-colors">Contacto</a></li>
-          </ul>
-        </div>
-
       </div>
 
-      <!-- Barra inferior / Bottom bar -->
-      <div class="border-t border-white/7 pt-8 flex flex-col sm:flex-row
-                  items-center justify-between gap-3">
-        <p class="text-white/22 text-xs font-body text-center">
-          © 2026 Grupo Empresarial A Reintegrar S.A.S. · Todos los derechos reservados ·
-          Malambo, Atlántico, Colombia.
-        </p>
-        <p class="text-white/18 text-xs font-body">
-          Reintegrando materiales, construyendo futuro
-        </p>
+      <!-- Servicios / Services -->
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Chatarra</a></li>
+          <li><a href="#servicios">Residuos peligrosos</a></li>
+          <li><a href="#servicios">Residuos sólidos</a></li>
+          <li><a href="#servicios">Materias primas</a></li>
+          <li><a href="#madera-plastica">Madera plástica</a></li>
+          <li><a href="#servicios">Economía circular</a></li>
+        </ul>
       </div>
 
+      <!-- Empresa / Company -->
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#proceso">Nuestro proceso</a></li>
+          <li><a href="#madera-plastica">Madera plástica</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2026 Grupo Empresarial A Reintegrar S.A.S. · Malambo, Atlántico, Colombia
+      </p>
+      <p class="footer-slogan">Reintegrando materiales, construyendo futuro.</p>
     </div>
   </footer>
 
   <!-- ════════════════════════════════════════════════════════════════
-       JAVASCRIPT — Interacciones del sitio / Site interactions
+       JAVASCRIPT — Interacciones / Interactions
        ════════════════════════════════════════════════════════════════ -->
   <script>
-    /* ── Navbar: efecto al hacer scroll / scroll effect ─────────────── */
-    const navbar  = document.getElementById('navbar');
-    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 60);
-    window.addEventListener('scroll', onScroll, { passive: true });
+    /* ── Navbar solid on scroll / Navbar sólida al hacer scroll ─── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('solid', window.scrollY > 60);
+    }, { passive: true });
 
-    /* ── Menú móvil / Mobile menu ────────────────────────────────────── */
-    const menuBtn    = document.getElementById('menu-btn');
-    const menuIcon   = document.getElementById('menu-icon');
-    const mobileMenu = document.getElementById('mobile-menu');
+    /* ── Mobile nav / Menú móvil ─────────────────────────────────── */
+    const mobileNav   = document.getElementById('mobile-nav');
+    const navBurger   = document.getElementById('nav-burger');
+    const mobileClose = document.getElementById('mobile-close');
 
-    menuBtn.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
-      /* Cambia ícono hamburguesa ↔ X / Toggle hamburger ↔ X icon */
-      menuIcon.className = open ? 'fa-solid fa-xmark text-xl' : 'fa-solid fa-bars text-xl';
+    navBurger.addEventListener('click',   () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+
+    function closeMobileNav() { mobileNav.classList.remove('open'); }
+
+    /* Cerrar con tecla Esc / Close with Escape key */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMobileNav();
     });
 
-    /* Cerrar menú al navegar / Close menu on navigation */
-    function closeMenu() {
-      mobileMenu.classList.remove('open');
-      menuIcon.className = 'fa-solid fa-bars text-xl';
-    }
-
-    /* ── Revelar elementos al hacer scroll / Scroll reveal ───────────── */
-    const revealObs = new IntersectionObserver((entries) => {
+    /* ── Reveal on scroll / Revelar al hacer scroll ──────────────── */
+    const revObs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
-    /* ── Contadores animados / Animated number counters ─────────────── */
-    function animateCount(el, target, suffix) {
-      const dur  = 2000;                /* duración en ms / duration in ms */
-      const step = target / (dur / 16); /* 60 fps                           */
-      let   val  = 0;
-
-      const tick = setInterval(() => {
-        val += step;
-        if (val >= target) {
+    /* ── Animated counters / Contadores animados ─────────────────── */
+    function animCount(el, target, suffix) {
+      const dur = 2200;
+      const step = target / (dur / 16);
+      let v = 0;
+      const t = setInterval(() => {
+        v += step;
+        if (v >= target) {
           el.textContent = target.toLocaleString('es-CO') + suffix;
-          clearInterval(tick);
+          clearInterval(t);
         } else {
-          el.textContent = Math.floor(val).toLocaleString('es-CO') + suffix;
+          el.textContent = Math.floor(v).toLocaleString('es-CO') + suffix;
         }
       }, 16);
     }
@@ -1508,38 +1796,28 @@
         const el     = e.target;
         const target = parseInt(el.dataset.target, 10);
         const suffix = el.dataset.suffix ?? '+';
-        animateCount(el, target, suffix);
-        cntObs.unobserve(el); /* solo animar una vez / animate only once */
+        animCount(el, target, suffix);
+        cntObs.unobserve(el);
       });
     }, { threshold: 0.6 });
 
     document.querySelectorAll('.counter').forEach(el => cntObs.observe(el));
 
-    /* ── Formulario de contacto / Contact form ───────────────────────── */
+    /* ── Contact form / Formulario de contacto ───────────────────── */
     function handleSubmit(e) {
       e.preventDefault();
-
       /*
         INTEGRACIÓN PENDIENTE / PENDING INTEGRATION:
-        ─────────────────────────────────────────────
-        Conectar con un servicio de envío de emails:
-        Connect with an email delivery service:
+        Conectar con Formspree, EmailJS o endpoint propio.
+        Connect to Formspree, EmailJS, or a custom backend endpoint.
 
-        Opciones / Options:
-          · Formspree  → https://formspree.io
-          · EmailJS    → https://www.emailjs.com
-          · Backend propio (Django/Node) con endpoint POST
-
-        Ejemplo Formspree / Formspree example:
-          <form action="https://formspree.io/f/TU_ID" method="POST">
+        Ejemplo Formspree:
+        <form action="https://formspree.io/f/YOUR_ID" method="POST">
       */
-
-      const successMsg = document.getElementById('success-msg');
-      successMsg.classList.remove('hidden');
+      const msg = document.getElementById('success-msg');
+      msg.classList.remove('hidden');
       e.target.reset();
-
-      /* Ocultar mensaje tras 5 s / Hide message after 5 s */
-      setTimeout(() => successMsg.classList.add('hidden'), 5000);
+      setTimeout(() => msg.classList.add('hidden'), 5500);
     }
   </script>
 
