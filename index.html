@@ -928,38 +928,223 @@
     .counter { font-variant-numeric: tabular-nums; }
 
     /* ════════════════════════════════════════════════════════
-       RESPONSIVE — Mobile adjustments
+       RESPONSIVE — Breakpoints completos para todos los dispositivos
+       Complete responsive breakpoints for all devices
        ════════════════════════════════════════════════════════ */
+
+    /* ── TABLET: hasta 1024px ────────────────────────────────
+       Tablets en horizontal y vertical / Landscape & portrait tablets */
     @media (max-width: 1024px) {
+      /* Secciones: reducir padding / Section padding reduction */
+      .proceso, .servicios, .impacto, .nosotros, .contacto { padding: 5rem 2rem; }
+      .madera-content { padding: 5rem 2rem; }
+      .footer { padding: 3rem 2rem 2rem; }
+
+      /* Hero: filmstrip de 2 columnas / 2-column filmstrip */
       .filmstrip { grid-template-columns: repeat(2, 1fr); height: 280px; }
       .filmstrip .strip:nth-child(3),
       .filmstrip .strip:nth-child(4) { display: none; }
-      .proceso-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .proceso-photo { aspect-ratio: 16/9; }
-      .svc-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 280px 280px; }
-      .svc-card-featured { grid-column: span 1; }
-      .impacto-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .madera-content { grid-template-columns: 1fr; gap: 3rem; }
-      .nosotros-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
       .hero-editorial { grid-template-columns: 1fr 1fr; }
       .hero-scroll { display: none; }
+
+      /* Proceso: foto arriba, pasos abajo / Photo top, steps bottom */
+      .proceso-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .proceso-photo { aspect-ratio: 16 / 9; }
+
+      /* Servicios: 2 columnas / 2-column grid */
+      .svc-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 280px 280px 280px;
+      }
+      .svc-card-featured { grid-column: span 1; }
+
+      /* Resto de secciones a 1 columna / Rest to 1 column */
+      .impacto-grid   { grid-template-columns: 1fr; gap: 3rem; }
+      .madera-content { grid-template-columns: 1fr; gap: 3rem; }
+      .nosotros-grid  { grid-template-columns: 1fr; gap: 3rem; }
+      .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid    { grid-template-columns: 1fr 1fr; }
     }
+
+    /* ── TELÉFONO: hasta 768px ───────────────────────────────
+       Smartphones grandes / Large smartphones */
     @media (max-width: 768px) {
+      /* Navbar móvil / Mobile navbar */
+      .nav { padding: 0 1.25rem; height: 60px; }
       .nav-links { display: none; }
-      .nav-cta { display: none; }
+      .nav-cta   { display: none; }
       .nav-burger { display: block; }
-      .hero { padding: 68px 1.25rem 2.5rem; }
-      .filmstrip { grid-template-columns: 1fr 1fr; height: 220px; }
-      .hero-editorial { grid-template-columns: 1fr; gap: 0.75rem; }
+
+      /* Hero */
+      .hero { padding: 72px 1.25rem 2rem; }
+      .hero-top {
+        flex-direction: column; align-items: flex-start;
+        gap: 0.2rem; margin-bottom: 1.5rem; padding-top: 1.5rem;
+      }
+      .hero-tagline { text-align: left; max-width: 100%; }
+      .hero-display { margin-bottom: 1.5rem; }
+      .hero-display h1 { letter-spacing: -1.5px; }
+
+      /* Filmstrip: 2 columnas, altura reducida */
+      /* Filmstrip: 2 columns, reduced height */
+      .filmstrip { grid-template-columns: 1fr 1fr; height: 190px; gap: 7px; }
+      .strip { border-radius: 10px; }
+
+      /* Editorial bottom: 1 columna, ocultar 2da tarjeta */
+      /* Editorial bottom: 1 column, hide 2nd card */
+      .hero-editorial { grid-template-columns: 1fr; gap: 0.65rem; }
       .editorial-card:last-child { display: none; }
+      .hero-scroll { display: none; }
+
+      /* Secciones: padding móvil / Mobile section padding */
+      .proceso    { padding: 3.5rem 1.25rem; }
+      .servicios  { padding: 3.5rem 1.25rem; }
+      .impacto    { padding: 3.5rem 1.25rem; }
+      .nosotros   { padding: 3.5rem 1.25rem; }
+      .contacto   { padding: 3.5rem 1.25rem; }
+      .madera-content { padding: 3.5rem 1.25rem; }
+      .footer     { padding: 2.5rem 1.25rem 1.5rem; }
+
+      /* Proceso: foto como banner horizontal */
+      /* Process: photo as horizontal banner */
+      .proceso-photo { aspect-ratio: 16 / 9; border-radius: 14px; }
+      .proceso-photo-big { font-size: clamp(22px, 5.5vw, 34px); }
+      .proceso-header { margin-bottom: 2rem; }
+      .step { padding: 1.1rem 0; }
+
+      /* Servicios: 1 columna, tarjetas más cortas */
+      /* Services: 1 column, shorter cards */
       .svc-grid { grid-template-columns: 1fr; grid-template-rows: none; }
       .svc-grid .svc-card { height: 260px; }
-      .stats-mosaic { grid-template-columns: 1fr 1fr; }
-      .form-row { grid-template-columns: 1fr; }
+      .svc-card-featured { grid-column: span 1; }
+
+      /* Stats: 2 columnas, sin imágenes (ocupan demasiado espacio) */
+      /* Stats: 2 columns, no images (too much space on mobile) */
+      .stats-mosaic { grid-template-columns: 1fr 1fr; gap: 7px; }
+      .stat-img { display: none; }
+
+      /* Madera plástica: tamaño de texto reducido */
+      /* Plastic wood: reduced text size */
+      .madera { min-height: auto; }
+      .madera-big { font-size: clamp(36px, 8.5vw, 56px); letter-spacing: -1px; }
+      .madera-glass { border-radius: 16px; }
+
+      /* Nosotros: comillas más pequeñas */
+      /* About us: smaller quote marks */
+      .quote-mark  { font-size: 5rem; margin-bottom: -0.4rem; }
+      .val-row     { gap: 0.5rem; }
+      .val-pill    { font-size: 0.68rem; padding: 0.4rem 0.8rem; }
+
+      /* Contacto: formulario 1 columna */
+      /* Contact: single-column form */
+      .contact-form-wrap { padding: 1.75rem 1.25rem; border-radius: 16px; }
+      .form-row { grid-template-columns: 1fr; gap: 0.75rem; }
+
+      /* Footer: 1 columna */
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+      /* Headings de sección */
+      .section-h2 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+    }
+
+    /* ── TELÉFONO PEQUEÑO: hasta 480px ──────────────────────
+       Smartphones de 4-5 pulgadas / 4-5 inch smartphones */
+    @media (max-width: 480px) {
+      /* Navbar */
+      .nav { padding: 0 1rem; height: 56px; }
+      .nav-logo { height: 32px; }
+
+      /* Hero aún más compacto */
+      .hero { padding: 62px 1rem 1.5rem; }
+      .hero-eyebrow { font-size: 0.58rem; letter-spacing: 2px; }
+      .hero-top { margin-bottom: 1.2rem; }
+      .hero-display { margin-bottom: 1.25rem; }
+      .hero-display h1 { letter-spacing: -1px; }
+
+      /* Filmstrip pequeño */
+      .filmstrip { height: 155px; gap: 6px; }
+      .strip { border-radius: 8px; }
+
+      /* Tarjeta editorial compacta */
+      .editorial-card { padding: 0.85rem 1rem; border-radius: 10px; }
+      .editorial-card p { font-size: 0.72rem; }
+      .editorial-label { font-size: 0.62rem; }
+
+      /* Secciones: padding mínimo */
+      .proceso    { padding: 3rem 1rem; }
+      .servicios  { padding: 3rem 1rem; }
+      .impacto    { padding: 3rem 1rem; }
+      .nosotros   { padding: 3rem 1rem; }
+      .contacto   { padding: 3rem 1rem; }
+      .madera-content { padding: 3rem 1rem; }
+      .footer     { padding: 2rem 1rem 1.25rem; }
+
+      /* Proceso: pasos más compactos */
+      .proceso-header h2 { font-size: 1.35rem; }
+      .step { padding: 0.9rem 0; gap: 0.75rem 1rem; }
+      .step-title { font-size: 0.78rem; }
+      .step-desc  { font-size: 0.72rem; }
+
+      /* Servicios */
+      .svc-grid .svc-card { height: 240px; }
+      .svc-title { font-size: 0.88rem; }
+      .svc-desc  { font-size: 0.7rem; }
+
+      /* Stats mosaico compacto */
+      .stats-mosaic { grid-template-columns: 1fr 1fr; gap: 5px; }
+      .stat-block { padding: 1rem 0.85rem; border-radius: 10px; }
+      .stat-num   { font-size: 1.5rem; }
+      .stat-label { font-size: 0.58rem; }
+
+      /* Madera plástica */
+      .madera-big { font-size: clamp(28px, 7.5vw, 40px); letter-spacing: -0.5px; }
+      .madera-glass { padding: 1.5rem 1.1rem; border-radius: 12px; }
+      .madera-glass h3 { font-size: 0.95rem; }
+      .check-list li { font-size: 0.78rem; }
+      .chips { gap: 0.3rem; margin-top: 1.1rem; }
+      .chip  { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
+      .madera-stat { padding: 1rem 1.1rem; gap: 0.75rem; }
+      .madera-stat-num { font-size: 1.5rem; }
+
+      /* Nosotros */
+      .quote-mark    { font-size: 4rem; }
+      .nosotros-quote { font-size: clamp(1.45rem, 5.5vw, 2rem); }
+      .nosotros-sub  { font-size: 0.8rem; }
+      .val-pill      { font-size: 0.62rem; padding: 0.35rem 0.7rem; gap: 0.4rem; }
+      .val-pill i    { font-size: 0.6rem; }
+      .mv-card       { padding: 1.25rem; border-radius: 12px; }
+      .mv-p          { font-size: 0.76rem; }
+
+      /* Contacto */
+      .contact-form-wrap { padding: 1.5rem 1rem; border-radius: 14px; }
+      .contact-form-wrap h3 { font-size: 0.95rem; margin-bottom: 1.25rem; }
+      .c-input  { padding: 0.7rem 0.85rem; font-size: 0.82rem; border-radius: 8px; }
+      .form-label { font-size: 0.6rem; }
+      .info-icon { width: 38px; height: 38px; border-radius: 9px; font-size: 0.9rem; }
+      .info-label { font-size: 0.65rem; }
+      .info-val   { font-size: 0.8rem; }
+
+      /* Botones */
+      .btn { font-size: 0.72rem; padding: 0.75rem 1.35rem; }
+      .btn-wa { font-size: 0.78rem; }
+      .nav-cta { font-size: 0.68rem; padding: 0.5rem 1.1rem; }
+
+      /* Footer */
+      .footer-logo { height: 30px; }
+      .footer-about { font-size: 0.74rem; }
+      .footer-copy  { font-size: 0.65rem; }
+    }
+
+    /* ── MUY PEQUEÑO: hasta 360px ────────────────────────────
+       Teléfonos muy pequeños / Very small phones */
+    @media (max-width: 360px) {
+      .hero { padding: 58px 0.85rem 1.25rem; }
+      .filmstrip { height: 130px; gap: 5px; }
+      .hero-display h1 { letter-spacing: -0.5px; }
+      .madera-big { font-size: clamp(24px, 7vw, 34px); }
+      .nosotros-quote { font-size: 1.3rem; }
+      .contact-form-wrap { padding: 1.25rem 0.85rem; }
     }
   </style>
 </head>
