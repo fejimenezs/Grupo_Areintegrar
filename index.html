@@ -115,11 +115,22 @@
       box-shadow: 0 1px 0 rgba(34,211,238,0.08);
     }
     /* Logo centrado / Centered logo */
-    .nav-logo-wrap { display: flex; align-items: center; justify-content: center; }
+    .nav-logo-wrap {
+      display: flex; align-items: center; justify-content: center;
+    }
     .nav-logo {
       height: 44px; width: auto; object-fit: contain;
-      mix-blend-mode: screen;
-      filter: brightness(1.15) contrast(1.05);
+      border-radius: 10px;
+      /* Mientras se recibe PNG transparente / Until transparent PNG is provided:
+         background oscuro que disimula el fondo gris del PNG */
+      background: var(--deep);
+      padding: 3px 6px;
+      box-shadow: 0 0 0 1px rgba(34,211,238,0.10);
+      filter: brightness(1.05) drop-shadow(0 2px 8px rgba(34,211,238,0.15));
+      transition: filter 0.25s;
+    }
+    .nav-logo-wrap:hover .nav-logo {
+      filter: brightness(1.1) drop-shadow(0 2px 12px rgba(34,211,238,0.3));
     }
     /* Grupo izquierdo y derecho / Left and right groups */
     .nav-links { display: flex; gap: 2rem; align-items: center; }
@@ -207,37 +218,34 @@
       pointer-events: none;
     }
 
-    /* ── HERO BRAND: logo grande + NIT ──────────────────────
-       Hero brand block: large logo + NIT badge */
-    .hero-brand {
-      display: flex; align-items: center; gap: 1.75rem;
-      padding-top: 2.5rem; margin-bottom: 2.25rem;
+    /* ── HERO EYEBROW ROW: empresa + NIT compacto ───────────
+       Company eyebrow row: name + NIT compact */
+    .hero-eyebrow-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 2.5rem; margin-bottom: 2rem;
       position: relative; z-index: 1;
     }
-    .hero-brand-logo {
-      height: clamp(72px, 9vw, 120px);
-      width: auto; object-fit: contain; flex-shrink: 0;
-      mix-blend-mode: screen;
-      filter: brightness(1.25) contrast(1.1) drop-shadow(0 0 18px rgba(34,211,238,0.25));
-    }
-    .hero-nit-badge {
+    .hero-eyebrow {
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.68rem; font-weight: 700;
+      font-size: 0.65rem; font-weight: 700;
       letter-spacing: 2.5px; text-transform: uppercase;
       color: var(--accent);
-      display: flex; flex-direction: column; gap: 0.2rem;
     }
-    .hero-nit-badge .nit-line { color: rgba(255,255,255,0.35); font-size: 0.62rem; font-weight: 400; letter-spacing: 1.5px; }
+    .hero-location {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; color: rgba(255,255,255,0.28);
+      font-style: italic;
+    }
 
-    /* ── TITULAR DISPLAY GIGANTE ─────────────────────────────
-       Giant display headline: company name + tagline */
+    /* ── TITULAR DISPLAY — tamaño equilibrado ────────────────
+       Display headline — balanced sizing */
     .hero-display {
       position: relative; z-index: 1;
       margin-bottom: 2rem;
     }
     .hero-display h1 {
-      font-size: clamp(48px, 10vw, 118px);
-      font-weight: 900; line-height: 0.9;
+      font-size: clamp(52px, 10vw, 130px);
+      font-weight: 900; line-height: 0.88;
       letter-spacing: -3px;
       color: white; margin: 0;
     }
@@ -248,11 +256,12 @@
     /* Línea slogan con trazo / Tagline stroke line */
     .hero-display h1 .line-stroke {
       display: block;
-      font-size: clamp(20px, 4vw, 48px);
-      -webkit-text-stroke: 1.5px rgba(255,255,255,0.18);
+      font-size: clamp(18px, 3.5vw, 44px);
+      font-style: italic;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.16);
       color: transparent;
-      letter-spacing: -1px;
-      margin-top: 0.6rem;
+      letter-spacing: -0.5px;
+      margin-top: 0.5rem;
     }
 
     /* ── FILMSTRIP: 4 fotos verticales / 4 vertical photos ── */
@@ -1022,14 +1031,12 @@
 
       /* Hero */
       .hero { padding: 72px 1.25rem 2rem; }
-      .hero-brand {
-        gap: 1rem; padding-top: 1.5rem; margin-bottom: 1.75rem;
-      }
-      .hero-brand-logo { height: clamp(52px, 10vw, 72px); }
-      .hero-nit-badge  { font-size: 0.6rem; letter-spacing: 1.5px; }
-      .hero-display    { margin-bottom: 1.5rem; }
-      .hero-display h1 { letter-spacing: -1.5px; }
-      .hero-display h1 .line-stroke { font-size: clamp(16px, 4vw, 28px); }
+      .hero-eyebrow-row { padding-top: 1.5rem; margin-bottom: 1.5rem; }
+      .hero-eyebrow     { font-size: 0.58rem; letter-spacing: 1.5px; }
+      .hero-location    { display: none; }
+      .hero-display     { margin-bottom: 1.5rem; }
+      .hero-display h1  { letter-spacing: -1.5px; }
+      .hero-display h1 .line-stroke { font-size: clamp(15px, 3.5vw, 26px); }
 
       /* Filmstrip: 2 columnas, altura reducida */
       /* Filmstrip: 2 columns, reduced height */
@@ -1101,14 +1108,13 @@
       .nav { padding: 0 1rem; height: 56px; }
       .nav-logo { height: 36px; }
 
-      /* Hero compacto en teléfono pequeño */
+      /* Hero compacto teléfono pequeño */
       .hero { padding: 62px 1rem 1.5rem; }
-      .hero-brand { gap: 0.75rem; padding-top: 1.25rem; margin-bottom: 1.25rem; }
-      .hero-brand-logo { height: 48px; }
-      .hero-nit-badge  { font-size: 0.55rem; }
-      .hero-display    { margin-bottom: 1.25rem; }
+      .hero-eyebrow-row { padding-top: 1.1rem; margin-bottom: 1.1rem; flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+      .hero-eyebrow  { font-size: 0.52rem; }
+      .hero-display  { margin-bottom: 1.1rem; }
       .hero-display h1 { letter-spacing: -1px; }
-      .hero-display h1 .line-stroke { font-size: clamp(14px, 3.5vw, 22px); }
+      .hero-display h1 .line-stroke { font-size: clamp(13px, 3.2vw, 20px); }
 
       /* Filmstrip pequeño */
       .filmstrip { height: 155px; gap: 6px; }
@@ -1254,27 +1260,26 @@
        ════════════════════════════════════════════════════════════════ -->
   <section id="inicio" class="hero">
 
-    <!-- Logo grande + NIT / Large logo + NIT -->
-    <div class="hero-brand hero-anim-1">
-      <img src="logo_final.png" alt="A Reintegrar" class="hero-brand-logo" />
-      <div class="hero-nit-badge">
-        <span data-es="GRUPO EMPRESARIAL A REINTEGRAR S.A.S."
-              data-en="GRUPO EMPRESARIAL A REINTEGRAR S.A.S.">
-          GRUPO EMPRESARIAL A REINTEGRAR S.A.S.
-        </span>
-        <span class="nit-line" data-es="NIT 900.674.244-7 · Malambo, Atlántico, Colombia"
-                                data-en="NIT 900.674.244-7 · Malambo, Atlántico, Colombia">
-          NIT 900.674.244-7 · Malambo, Atlántico, Colombia
-        </span>
-      </div>
+    <!-- Eyebrow: nombre empresa + NIT (compacto) / Company name + NIT eyebrow -->
+    <div class="hero-eyebrow-row hero-anim-1">
+      <span class="hero-eyebrow"
+            data-es="GRUPO EMPRESARIAL A REINTEGRAR S.A.S. · NIT 900.674.244-7"
+            data-en="GRUPO EMPRESARIAL A REINTEGRAR S.A.S. · NIT 900.674.244-7">
+        GRUPO EMPRESARIAL A REINTEGRAR S.A.S. · NIT 900.674.244-7
+      </span>
+      <span class="hero-location"
+            data-es="Malambo, Atlántico · Colombia"
+            data-en="Malambo, Atlántico · Colombia">
+        Malambo, Atlántico · Colombia
+      </span>
     </div>
 
-    <!-- Titular display gigante / Giant display headline -->
+    <!-- Titular display / Display headline -->
     <div class="hero-display hero-anim-2">
       <h1>
-        <span class="line-white" data-es="GRUPO EMPRESARIAL" data-en="BUSINESS GROUP">GRUPO EMPRESARIAL</span>
-        <span class="line-cyan"  data-es="A REINTEGRAR S.A.S." data-en="A REINTEGRAR S.A.S.">A REINTEGRAR S.A.S.</span>
-        <span class="line-stroke" data-es="DEL RESIDUO AL VALOR." data-en="FROM WASTE TO VALUE.">DEL RESIDUO AL VALOR.</span>
+        <span class="line-white" data-es="A REINTEGRAR" data-en="A REINTEGRAR">A REINTEGRAR</span>
+        <span class="line-cyan"  data-es="S.A.S." data-en="S.A.S.">S.A.S.</span>
+        <span class="line-stroke" data-es="Del residuo al valor." data-en="From waste to value.">Del residuo al valor.</span>
       </h1>
     </div>
 
