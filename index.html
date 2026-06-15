@@ -217,23 +217,14 @@
       pointer-events: none;
     }
 
-    /* ── HERO EYEBROW ROW: empresa + NIT compacto ───────────
-       Company eyebrow row: name + NIT compact */
-    .hero-eyebrow-row {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-top: 2.5rem; margin-bottom: 2rem;
-      position: relative; z-index: 1;
-    }
-    .hero-eyebrow {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--accent);
-    }
-    .hero-location {
+    /* Subtítulo del hero / Hero subtitle */
+    .hero-sub {
       font-family: 'Inter', sans-serif;
-      font-size: 0.72rem; color: rgba(255,255,255,0.28);
+      font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+      color: rgba(255,255,255,0.38);
       font-style: italic;
+      letter-spacing: 0.5px;
+      margin-top: 1.25rem;
     }
 
     /* ── TITULAR DISPLAY — jerarquía editorial equilibrada ──
@@ -1043,9 +1034,7 @@
 
       /* Hero */
       .hero { padding: 72px 1.25rem 2rem; }
-      .hero-eyebrow-row { padding-top: 1.5rem; margin-bottom: 1.5rem; }
-      .hero-eyebrow     { font-size: 0.58rem; letter-spacing: 1.5px; }
-      .hero-location    { display: none; }
+      .hero-sub { font-size: 0.72rem; margin-top: 1rem; }
       .hero-display     { margin-bottom: 1.5rem; }
       .hero-display h1  { letter-spacing: -1.5px; }
       .hero-display h1 .line-stroke { font-size: clamp(15px, 3.5vw, 26px); }
@@ -1123,8 +1112,7 @@
 
       /* Hero compacto teléfono pequeño */
       .hero { padding: 62px 1rem 1.5rem; }
-      .hero-eyebrow-row { padding-top: 1.1rem; margin-bottom: 1.1rem; flex-direction: column; align-items: flex-start; gap: 0.2rem; }
-      .hero-eyebrow  { font-size: 0.52rem; }
+      .hero-sub { font-size: 0.68rem; margin-top: 0.85rem; }
       .hero-display  { margin-bottom: 1.1rem; }
       .hero-display h1 { letter-spacing: -1px; }
       .hero-display h1 .line-stroke { font-size: clamp(13px, 3.2vw, 20px); }
@@ -1273,22 +1261,8 @@
        ════════════════════════════════════════════════════════════════ -->
   <section id="inicio" class="hero">
 
-    <!-- Eyebrow: nombre empresa + NIT (compacto) / Company name + NIT eyebrow -->
-    <div class="hero-eyebrow-row hero-anim-1">
-      <span class="hero-eyebrow"
-            data-es="GRUPO EMPRESARIAL A REINTEGRAR S.A.S. · NIT 900.674.244-7"
-            data-en="GRUPO EMPRESARIAL A REINTEGRAR S.A.S. · NIT 900.674.244-7">
-        GRUPO EMPRESARIAL A REINTEGRAR S.A.S. · NIT 900.674.244-7
-      </span>
-      <span class="hero-location"
-            data-es="Malambo, Atlántico · Colombia"
-            data-en="Malambo, Atlántico · Colombia">
-        Malambo, Atlántico · Colombia
-      </span>
-    </div>
-
     <!-- Titular display / Display headline -->
-    <div class="hero-display hero-anim-2">
+    <div class="hero-display hero-anim-1">
       <h1>
         <span class="line-label"
               data-es="GRUPO EMPRESARIAL"
@@ -1300,6 +1274,10 @@
               data-es="Del residuo al valor."
               data-en="From waste to value.">Del residuo al valor.</span>
       </h1>
+      <p class="hero-sub" data-es="Operador integral de economía circular · Malambo, Colombia"
+                          data-en="Comprehensive circular economy operator · Malambo, Colombia">
+        Operador integral de economía circular · Malambo, Colombia
+      </p>
     </div>
 
     <!-- Filmstrip: 4 fotos verticales / 4 vertical photos filmstrip -->
