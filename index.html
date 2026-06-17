@@ -61,23 +61,23 @@
        VARIABLES — Sistema de diseño / Design system tokens
        ════════════════════════════════════════════════════════ */
     :root {
-      /* Paleta Medianoche Navy + Cian / Midnight Navy + Cyan palette */
-      --deep:       #030d14;
-      --forest:     #051a24;
-      --mid:        #083040;
-      --green:      #0d4a5f;
-      --accent:     #0891b2;
-      --bright:     #22d3ee;
-      --lime:       #67e8f9;
-      --sage:       #cffafe;
-      --cream:      #ecfeff;
+      /* Paleta Verde Profundo + Lima / Deep Green + Lime palette */
+      --deep:       #030d06;
+      --forest:     #051a0a;
+      --mid:        #0a2e10;
+      --green:      #0f5a1a;
+      --accent:     #16a34a;
+      --bright:     #4ade80;
+      --lime:       #86efac;
+      --sage:       #dcfce7;
+      --cream:      #f0fdf4;
       --white:      #ffffff;
 
       /* Glassmorfismo / Glassmorphism */
-      --glass-dk:   rgba(3, 13, 20, 0.75);
-      --glass-md:   rgba(5, 26, 36, 0.60);
+      --glass-dk:   rgba(3, 13, 6, 0.75);
+      --glass-md:   rgba(5, 26, 10, 0.60);
       --glass-lt:   rgba(255, 255, 255, 0.06);
-      --glass-bd:   rgba(34, 211, 238, 0.12);
+      --glass-bd:   rgba(74, 222, 128, 0.12);
     }
 
     /* ════════════════════════════════════════════════════════
@@ -92,7 +92,7 @@
     ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
 
     /* Selección de texto / Text selection */
-    ::selection { background: rgba(8,145,178,0.35); color: #fff; }
+    ::selection { background: rgba(22,163,74,0.35); color: #fff; }
 
     /* ════════════════════════════════════════════════════════
        NAVBAR
@@ -104,15 +104,15 @@
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       height: 68px;
-      background: rgba(3, 13, 20, 0.0);
+      background: rgba(3, 13, 6,0.0);
       backdrop-filter: blur(0px);
       transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
     }
     .nav.solid {
-      background: rgba(3, 13, 20, 0.92);
+      background: rgba(3, 13, 6,0.92);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      box-shadow: 0 1px 0 rgba(34,211,238,0.08);
+      box-shadow: 0 1px 0 rgba(74,222,128,0.08);
     }
     /* Nombre de marca centrado / Centered brand name */
     .nav-logo-wrap {
@@ -140,14 +140,14 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px;
       background: none;
-      border: 1px solid rgba(34,211,238,0.22);
+      border: 1px solid rgba(74,222,128,0.22);
       color: rgba(255,255,255,0.5);
       padding: 0.3rem 0.65rem; border-radius: 50px;
       cursor: pointer; transition: all 0.25s;
     }
     .lang-toggle:hover {
       border-color: var(--bright); color: var(--bright);
-      background: rgba(34,211,238,0.06);
+      background: rgba(74,222,128,0.06);
     }
     .lang-toggle.en { border-color: var(--bright); color: var(--bright); }
     .nav-link {
@@ -174,7 +174,7 @@
     .nav-burger { display: none; background: none; border: none; cursor: pointer; color: white; font-size: 1.3rem; }
     .mobile-nav {
       position: fixed; inset: 0; z-index: 99;
-      background: rgba(3,13,20,0.97);
+      background: rgba(3,13,6,0.97);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       display: flex; flex-direction: column;
@@ -201,7 +201,7 @@
        ════════════════════════════════════════════════════════ */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(170deg, var(--deep) 0%, #061c30 45%, var(--forest) 100%);
+      background: linear-gradient(170deg, var(--deep) 0%, #061c0b 45%, var(--forest) 100%);
       padding: 68px 2.5rem 3rem;
       display: flex; flex-direction: column;
       position: relative; overflow: hidden;
@@ -212,8 +212,8 @@
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(8,145,178,0.08) 0%, transparent 70%),
-        radial-gradient(circle at 15% 30%, rgba(8,145,178,0.04) 0%, transparent 40%);
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(22,163,74,0.08) 0%, transparent 70%),
+        radial-gradient(circle at 15% 30%, rgba(22,163,74,0.04) 0%, transparent 40%);
       pointer-events: none;
     }
 
@@ -296,7 +296,7 @@
       content: '';
       position: absolute; bottom: 0; left: 0; right: 0;
       height: 40%;
-      background: linear-gradient(to top, rgba(3,13,20,0.6) 0%, transparent 100%);
+      background: linear-gradient(to top, rgba(3,13,6,0.6) 0%, transparent 100%);
       pointer-events: none;
     }
 
@@ -374,7 +374,7 @@
     }
     .proceso-photo-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(0deg, rgba(3,13,20,0.92) 0%, rgba(3,13,20,0.4) 50%, transparent 100%);
+      background: linear-gradient(0deg, rgba(3,13,6,0.92) 0%, rgba(3,13,6,0.4) 50%, transparent 100%);
     }
     .proceso-photo-text {
       position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem;
@@ -406,7 +406,7 @@
       transition: border-color 0.3s;
     }
     .step:last-child { border-bottom: none; }
-    .step:hover { border-color: rgba(8,145,178,0.3); }
+    .step:hover { border-color: rgba(22,163,74,0.3); }
 
     .step-num {
       font-family: 'Montserrat', sans-serif;
@@ -423,7 +423,7 @@
     .step-title::after {
       content: '';
       flex: 1; height: 1px;
-      background: linear-gradient(to right, rgba(8,145,178,0.5), transparent);
+      background: linear-gradient(to right, rgba(22,163,74,0.5), transparent);
     }
     .step-desc {
       font-size: 0.8rem; line-height: 1.65;
@@ -488,9 +488,9 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         to top,
-        rgba(3,13,20,0.97) 0%,
-        rgba(3,13,20,0.65) 40%,
-        rgba(3,13,20,0.15) 75%,
+        rgba(3,13,6,0.97) 0%,
+        rgba(3,13,6,0.65) 40%,
+        rgba(3,13,6,0.15) 75%,
         transparent 100%
       );
       transition: background 0.4s;
@@ -510,8 +510,8 @@
     }
     .svc-icon {
       width: 40px; height: 40px; border-radius: 10px;
-      background: rgba(8,145,178,0.25);
-      border: 1px solid rgba(8,145,178,0.35);
+      background: rgba(22,163,74,0.25);
+      border: 1px solid rgba(22,163,74,0.35);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.05rem; color: var(--bright);
       margin-bottom: 0.85rem;
@@ -533,8 +533,8 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px;
       text-transform: uppercase; color: var(--bright);
-      background: rgba(3,13,20,0.5);
-      border: 1px solid rgba(34,211,238,0.25);
+      background: rgba(3,13,6,0.5);
+      border: 1px solid rgba(74,222,128,0.25);
       padding: 0.25rem 0.65rem; border-radius: 50px;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -557,11 +557,11 @@
     .impacto-text h2 {
       font-family: 'Montserrat', sans-serif;
       font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
-      color: #030d14; line-height: 1.1; margin-bottom: 1rem;
+      color: #030d06; line-height: 1.1; margin-bottom: 1rem;
     }
     .impacto-text p {
       font-size: 0.875rem; line-height: 1.75;
-      color: rgba(3,18,28,0.55); max-width: 380px;
+      color: rgba(3,18,9,0.55); max-width: 380px;
       margin-bottom: 2rem;
     }
 
@@ -584,7 +584,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 0.62rem; font-weight: 700;
       letter-spacing: 1px; text-transform: uppercase;
-      color: rgba(3,18,28,0.45);
+      color: rgba(3,18,9,0.45);
     }
     .stat-block.dark .stat-label,
     .stat-block.accent-bg .stat-label { color: rgba(255,255,255,0.55); }
@@ -599,7 +599,7 @@
 
     .stat-unit {
       font-family: 'Inter', sans-serif;
-      font-size: 0.72rem; color: rgba(3,18,28,0.45);
+      font-size: 0.72rem; color: rgba(3,18,9,0.45);
     }
     .stat-block.dark .stat-unit,
     .stat-block.accent-bg .stat-unit { color: rgba(255,255,255,0.55); }
@@ -631,10 +631,10 @@
       position: absolute; inset: 0;
       background: linear-gradient(
         100deg,
-        rgba(3,13,20,0.97) 0%,
-        rgba(3,13,20,0.88) 45%,
-        rgba(3,13,20,0.50) 75%,
-        rgba(3,13,20,0.20) 100%
+        rgba(3,13,6,0.97) 0%,
+        rgba(3,13,6,0.88) 45%,
+        rgba(3,13,6,0.50) 75%,
+        rgba(3,13,6,0.20) 100%
       );
     }
     .madera-content {
@@ -689,19 +689,19 @@
       padding: 0.3rem 0.75rem; border-radius: 50px;
       transition: background 0.2s, border-color 0.2s;
     }
-    .chip:hover { background: rgba(8,145,178,0.22); border-color: rgba(8,145,178,0.35); }
+    .chip:hover { background: rgba(22,163,74,0.22); border-color: rgba(22,163,74,0.35); }
 
     /* Stat destacada / Feature stat */
     .madera-stat {
       display: flex; align-items: center; gap: 1rem;
-      background: rgba(8,145,178,0.18);
-      border: 1px solid rgba(8,145,178,0.3);
+      background: rgba(22,163,74,0.18);
+      border: 1px solid rgba(22,163,74,0.3);
       border-radius: 14px; padding: 1.25rem 1.5rem;
       margin-top: 1.75rem;
     }
     .madera-stat-icon {
       width: 48px; height: 48px; border-radius: 12px;
-      background: rgba(8,145,178,0.25); border: 1px solid rgba(8,145,178,0.35);
+      background: rgba(22,163,74,0.25); border: 1px solid rgba(22,163,74,0.35);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.3rem; color: var(--bright); flex-shrink: 0;
     }
@@ -737,7 +737,7 @@
     .quote-mark {
       font-family: 'Montserrat', sans-serif;
       font-size: 8rem; font-weight: 900;
-      color: rgba(8,145,178,0.15); line-height: 0.6;
+      color: rgba(22,163,74,0.15); line-height: 0.6;
       margin-bottom: -1rem; display: block;
     }
     .nosotros-sub {
@@ -754,8 +754,8 @@
       transition: border-color 0.3s, background 0.3s;
     }
     .mv-card:hover {
-      border-color: rgba(8,145,178,0.3);
-      background: rgba(8,145,178,0.05);
+      border-color: rgba(22,163,74,0.3);
+      background: rgba(22,163,74,0.05);
     }
     .mv-icon {
       width: 38px; height: 38px; border-radius: 9px;
@@ -788,8 +788,8 @@
       transition: all 0.25s;
     }
     .val-pill:hover {
-      background: rgba(8,145,178,0.12);
-      border-color: rgba(8,145,178,0.28);
+      background: rgba(22,163,74,0.12);
+      border-color: rgba(22,163,74,0.28);
       color: var(--bright);
     }
     .val-pill i { color: var(--accent); font-size: 0.7rem; }
@@ -808,7 +808,7 @@
       bottom: -100px; right: -100px;
       width: 500px; height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(8,145,178,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(22,163,74,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -866,7 +866,7 @@
     .info-item { display: flex; align-items: flex-start; gap: 1rem; }
     .info-icon {
       width: 42px; height: 42px; border-radius: 11px;
-      background: rgba(8,145,178,0.14); border: 1px solid rgba(8,145,178,0.22);
+      background: rgba(22,163,74,0.14); border: 1px solid rgba(22,163,74,0.22);
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem; color: var(--bright); flex-shrink: 0;
     }
@@ -891,7 +891,7 @@
     }
     .btn-green:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(8,145,178,0.4);
+      box-shadow: 0 10px 28px rgba(22,163,74,0.4);
       background: linear-gradient(135deg, #8fd46e 0%, #5bb84d 100%);
     }
     .btn-outline-w {
@@ -933,7 +933,7 @@
       color: rgba(255,255,255,0.38); font-size: 0.82rem;
       transition: all 0.25s; text-decoration: none;
     }
-    .social-btn:hover { background: rgba(8,145,178,0.18); border-color: rgba(8,145,178,0.3); color: var(--bright); }
+    .social-btn:hover { background: rgba(22,163,74,0.18); border-color: rgba(22,163,74,0.3); color: var(--bright); }
     .footer-col h4 {
       font-family: 'Montserrat', sans-serif;
       font-size: 0.65rem; font-weight: 800; letter-spacing: 2px;
@@ -1571,10 +1571,10 @@
       <!-- Texto izquierdo / Left text -->
       <div class="reveal">
         <span class="section-label" style="color:#1d4a1d;">NUESTRO IMPACTO</span>
-        <h2 class="impacto-text" style="font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#030d14;line-height:1.1;margin-bottom:1rem;">
+        <h2 class="impacto-text" style="font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#030d06;line-height:1.1;margin-bottom:1rem;">
           Real impacto en<br/>el <span style="color:var(--accent)">medio ambiente</span>
         </h2>
-        <p style="font-size:.875rem;line-height:1.75;color:rgba(3,18,28,.55);max-width:380px;margin-bottom:2rem;">
+        <p style="font-size:.875rem;line-height:1.75;color:rgba(3,18,9,.55);max-width:380px;margin-bottom:2rem;">
           Cada tonelada que procesamos es una tonelada menos en vertederos.
           Nuestras operaciones en Malambo generan valor ambiental, económico
           y social para la región Caribe de Colombia.
@@ -1744,7 +1744,7 @@
 
           <!-- Misión / Mission -->
           <div class="mv-card" style="background:rgba(29,74,29,.35);">
-            <div class="mv-icon" style="background:rgba(8,145,178,.2);color:var(--bright);">
+            <div class="mv-icon" style="background:rgba(22,163,74,.2);color:var(--bright);">
               <i class="fa-solid fa-bullseye"></i>
             </div>
             <div class="mv-h">Misión</div>
@@ -1927,7 +1927,7 @@
         <!-- Mensaje de éxito / Success message -->
         <div id="success-msg"
              class="hidden"
-             style="margin-top:.75rem;padding:.9rem 1.1rem;background:rgba(8,145,178,.15);border:1px solid rgba(8,145,178,.28);border-radius:10px;font-size:.8rem;color:var(--bright);text-align:center;font-family:'Inter',sans-serif;">
+             style="margin-top:.75rem;padding:.9rem 1.1rem;background:rgba(22,163,74,.15);border:1px solid rgba(22,163,74,.28);border-radius:10px;font-size:.8rem;color:var(--bright);text-align:center;font-family:'Inter',sans-serif;">
           <i class="fa-solid fa-circle-check mr-2"></i>
           ¡Mensaje enviado! Te contactaremos a la brevedad.
         </div>
